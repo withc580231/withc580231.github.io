@@ -1823,7 +1823,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ff9401;
+  background: #cdffde;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2991,6 +2991,12 @@ pre .javascript .function {
     text-align: justify;
   }
 }
-.site-meta {
-  background: linear-gradient(#f00, #00f);
+.header-inner {
+  background: linear-gradient(#ffc0cb, #87ceeb);
+}
+.header-inner:hover {
+  background: #ffc0cb;
+}
+.sidebar-inner {
+  background: #87ceeb;
 }
