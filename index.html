@@ -325,19 +325,19 @@
         
           
             <h2 id="什么是闭包"><a href="#什么是闭包" class="headerlink" title="什么是闭包"></a>什么是闭包</h2><p>闭包是一个拥有许多变量和绑定了这些变量的环境的表达式（通常是一个函数），因而这些变量也是该表达式的一部分。<br>换句话说：闭包就是<strong>能够读取其他函数内部变量的函数</strong>。只有<strong>函数内部</strong>的<strong>子函数</strong>才能读取<strong>局部变量</strong>，所以闭包可以理解成<strong>定义在一个函数内部的函数</strong>。在本质上，闭包是将函数内部和函数外部连接起来的<strong>桥梁</strong>。<br>来 看一个栗子：<br>(<code>)
-  function outter(){
-      var i = 0;
-      function inner(){
-          alert(++i)
-      }
-      return inner;
-  }
-  var res = outter();
-  res()
+  `function outter(){`
+      `var i = 0;`
+      `function inner(){`
+          `alert(++i)`
+      `}`
+      `return inner;`
+  `}`
+  `var res = outter();`
+  `res()`
 (</code>)<br>这段代码有两个特点：<br>  1、<strong>内层函数inner被外层函数outter包裹</strong><br>  2、<strong>执行函数outter返回函数inner</strong><br>这样执行完var res = outter()后，变量<strong>res</strong>实际上是<strong>指向</strong>了函数<strong>inner</strong>，inner中用到了变量i，再执行res()后就会弹出一个窗口显示i的值。这段代码其实就创建了一个闭包。<br>说简单一点：当函数outter的内部函数inner被函数outter外的一个变量引用的时候，就创建了一个我们通常所谓的<strong>闭包</strong></p>
-<p>##闭包的作用<br>闭包的作用就是在outter执行完并返回后，闭包使得Javascript的垃圾回收机制不会收回outter所占用的资源，因为outer的内部函数inner的执行需要依赖outter中的变量。<br>在上面的例子中，由于闭包的存在使得函数outter返回后，outter中的i始终存在，这样每次执行c()，i都是自加1后alert出i的值。那么我们来想象另一种情况，如果outter返回的不是函数inner，情况就完全不同了。因为outter执行完后，inner没有被返回给outter的外界，只是被outter所引用，而此时outter也只会被inner引 用，因此函数outter和inner互相引用但又不被外界打扰（被外界引用），函数outter和inner就会被回收。</p>
-<p>##何时使用闭包<br>当一个变量需要被保护，使其不会被全局污染</p>
-<p>##使用注意<br>1、由于闭包会使得函数中的变量都被<strong>保存在内存中</strong>，内存消耗很大，所以<strong>不能滥用</strong>闭包，否则会造成网页的性能问题，在IE中可能导致<strong>内存泄露</strong>。解决方法是，在退出函数之前，将不使用的局部变量全部删除。<br>2、闭包会在父函数外部，改变父函数内部变量的值。所以，如果把父函数当作对象（object）使用，把闭包当作它的公用方法（Public Method），把内部变量当作它的私有属性（private value），这时一定要小心，<strong>不要随便改变父函数内部变量的值</strong>。</p>
+<h2 id="闭包的作用"><a href="#闭包的作用" class="headerlink" title="闭包的作用"></a>闭包的作用</h2><p>闭包的作用就是在outter执行完并返回后，闭包使得Javascript的垃圾回收机制不会收回outter所占用的资源，因为outer的内部函数inner的执行需要依赖outter中的变量。<br>在上面的例子中，由于闭包的存在使得函数outter返回后，outter中的i始终存在，这样每次执行c()，i都是自加1后alert出i的值。那么我们来想象另一种情况，如果outter返回的不是函数inner，情况就完全不同了。因为outter执行完后，inner没有被返回给outter的外界，只是被outter所引用，而此时outter也只会被inner引 用，因此函数outter和inner互相引用但又不被外界打扰（被外界引用），函数outter和inner就会被回收</p>
+<h2 id="何时使用闭包"><a href="#何时使用闭包" class="headerlink" title="何时使用闭包"></a>何时使用闭包</h2><p>当一个变量需要被保护，使其不会被全局污染</p>
+<h2 id="使用注意"><a href="#使用注意" class="headerlink" title="使用注意"></a>使用注意</h2><p>1、由于闭包会使得函数中的变量都被<strong>保存在内存中</strong>，内存消耗很大，所以<strong>不能滥用</strong>闭包，否则会造成网页的性能问题，在IE中可能导致<strong>内存泄露</strong>。解决方法是，在退出函数之前，将不使用的局部变量全部删除。<br>2、闭包会在父函数外部，改变父函数内部变量的值。所以，如果把父函数当作对象（object）使用，把闭包当作它的公用方法（Public Method），把内部变量当作它的私有属性（private value），这时一定要小心，<strong>不要随便改变父函数内部变量的值</strong>。</p>
 
           
         
