@@ -312,7 +312,9 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">跨域的解决方法</h1>
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/03/07/ACAO/" itemprop="url">跨域的解决方法</a></h1>
         
 
         <div class="post-meta">
@@ -344,11 +346,6 @@
           
 
           
-            <span class="post-meta-divider">|</span>
-            <span class="page-pv"><i class="fa fa-file-o"></i> 阅读数
-            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
-            </span>
-          
 
           
 
@@ -369,9 +366,13 @@
       
 
       
-        <h2 id="什么是跨域"><a href="#什么是跨域" class="headerlink" title="什么是跨域"></a>什么是跨域</h2><p>从一个域名下的网页，向另一个域名下的服务端发送请求。这时候就会出现跨域问题。例如：<br>1.域名不同: <a href="http://www.a.com/index.js" target="_blank" rel="noopener">www.a.com/index.js</a>  -&gt; <a href="http://www.b.com/index" target="_blank" rel="noopener">www.b.com/index</a><br>2.二级域名不同: <a href="http://www.a.study.com/index.js" target="_blank" rel="noopener">www.a.study.com/index.js</a>  -&gt; <a href="http://www.b.study.com/index" target="_blank" rel="noopener">www.b.study.com/index</a><br>3.端口不同: localhost:5500  -&gt;localhost:8000<br>4.协议不同: <a href="http://localhost" target="_blank" rel="noopener">http://localhost</a>  -&gt;  <a href="https://localhost" target="_blank" rel="noopener">https://localhost</a><br>5.域名 -&gt; IP地址<br>以上五种情况，均禁止ajax发送异步请求。</p>
+        
+          
+            <h2 id="什么是跨域"><a href="#什么是跨域" class="headerlink" title="什么是跨域"></a>什么是跨域</h2><p>从一个域名下的网页，向另一个域名下的服务端发送请求。这时候就会出现跨域问题。例如：<br>1.域名不同: <a href="http://www.a.com/index.js" target="_blank" rel="noopener">www.a.com/index.js</a>  -&gt; <a href="http://www.b.com/index" target="_blank" rel="noopener">www.b.com/index</a><br>2.二级域名不同: <a href="http://www.a.study.com/index.js" target="_blank" rel="noopener">www.a.study.com/index.js</a>  -&gt; <a href="http://www.b.study.com/index" target="_blank" rel="noopener">www.b.study.com/index</a><br>3.端口不同: localhost:5500  -&gt;localhost:8000<br>4.协议不同: <a href="http://localhost" target="_blank" rel="noopener">http://localhost</a>  -&gt;  <a href="https://localhost" target="_blank" rel="noopener">https://localhost</a><br>5.域名 -&gt; IP地址<br>以上五种情况，均禁止ajax发送异步请求。</p>
 <h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>1.JSONP：<br>原理：动态插入script标签，通过script标签引入一个js文件，这个js文件载入成功后会执行我们在url参数中指定的函数，并且会把我们需要的json数据作为参数传入。<br>由于同源策略的限制，XmlHttpRequest只允许请求当前源（域名、协议、端口）的资源，为了实现跨域请求，可以通过script标签实现跨域请求，然后在服务端输出JSON数据并执行回调函数，从而解决了跨域的数据请求。<br>优点是兼容性好，简单易用，支持浏览器与服务器双向通信。缺点是只支持GET请求。<br>JSONP：json+padding（内填充），顾名思义，就是把JSON填充到一个盒子里<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    function createJs(sUrl)&#123;</span><br><span class="line"></span><br><span class="line">        var oScript = document.createElement(&apos;script&apos;);</span><br><span class="line">        oScript.type = &apos;text/javascript&apos;;</span><br><span class="line">        oScript.src = sUrl;</span><br><span class="line">        document.getElementsByTagName(&apos;head&apos;)[0].appendChild(oScript);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    createJs(&apos;jsonp.js&apos;);</span><br><span class="line"></span><br><span class="line">    box(&#123;</span><br><span class="line">       &apos;name&apos;: &apos;test&apos;</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    function box(json)&#123;</span><br><span class="line">        alert(json.name);</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
 
+          
+        
       
     </div>
     
@@ -388,28 +389,12 @@
       
 
       
-      
+
       
 
       
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2019/03/06/json/" rel="next" title="json数据">
-                <i class="fa fa-chevron-left"></i> json数据
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-          </div>
-        </div>
       
-
-      
+        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -450,7 +435,9 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">json数据</h1>
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/03/06/json/" itemprop="url">json数据</a></h1>
         
 
         <div class="post-meta">
@@ -482,11 +469,6 @@
           
 
           
-            <span class="post-meta-divider">|</span>
-            <span class="page-pv"><i class="fa fa-file-o"></i> 阅读数
-            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
-            </span>
-          
 
           
 
@@ -507,17 +489,19 @@
       
 
       
-        <h2 id="什么是json"><a href="#什么是json" class="headerlink" title="什么是json"></a>什么是json</h2><p>json(JavaScript Object Notation)是<strong>JavaScript对象表示法</strong>;json是<strong>存储和交换文本信息</strong>的<strong>语法</strong>(类似于XML)，是一种<strong>轻量级</strong>的<strong>文本数据交换格式</strong>,比XML更快更小更易解析。</p>
-<h2 id="json的表示方法"><a href="#json的表示方法" class="headerlink" title="json的表示方法"></a>json的表示方法</h2><p>json的表示方法和对象相似，但又不同。有何不同呢？看个栗子：<br>对象的写法一般是：<br>    <code>var aa ={name:&quot;zoumm&quot;,job :&quot;it&quot;,age :25};</code><br>而json的写法是：<br>    <code>{&quot;name&quot;:&quot;zoumm&quot;,&quot;job&quot;:&quot;it&quot;,&quot;age&quot;:23,&quot;school&quot;:{&quot;name&quot;:&quot;大学名&quot;，“add”:&quot;中国&quot;}}</code><br>由此可以看出：对象的属性名没有加引号，而json对象所有的属性名必须加双引号。<br><a id="more"></a></p>
-<h2 id="为什么json数据要解析"><a href="#为什么json数据要解析" class="headerlink" title="为什么json数据要解析"></a>为什么json数据要解析</h2><p>json数据在传输的过程中是以<strong>文本格式</strong>存在的，即以字符串的形式存在，然而我们的js中操作的却是<strong>对象</strong>，因此我们必须将json数据解析成对象的操作，然后才能用对象对数据进行访问。</p>
-<h2 id="json的数据格式有哪些"><a href="#json的数据格式有哪些" class="headerlink" title="json的数据格式有哪些"></a>json的数据格式有哪些</h2><p>1.Json字符串：<br>    <code>var json_str = &#39;{&quot;name&quot;:&quot;xiao&quot;,&quot;age&quot;:12}&#39;;</code><br>2.Josn对象：<br>    <code>var obj = {&quot;name&quot;:&quot;xiao&quot;,&quot;age&quot;:12};</code></p>
-<h2 id="json数据的解析"><a href="#json数据的解析" class="headerlink" title="json数据的解析"></a>json数据的解析</h2><p>1.JSON提供了json.js包，下载<a href="http://www.json.org/json.js" target="_blank" rel="noopener">http://www.json.org/json.js</a> 后，将其引入然后就可以简单的使用object.toJSONString()转换成JSON数据。<br>2.用eval()方法转换到Object，再obj.toJSONString()<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">function myEval() &#123;</span><br><span class="line">    var str = &apos;&#123; &quot;name&quot;: &quot;Violet&quot;, &quot;occupation&quot;: &quot;character&quot; &#125;&apos;;</span><br><span class="line">    var obj = eval(&apos;(&apos; + str + &apos;)&apos;);</span><br><span class="line">    alert(obj.toJSONString());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>3.JSON.parse()方法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var a=&apos;&#123;&quot;name&quot;: &quot;Violet&quot;, &quot;occupation&quot;: &quot;character&quot; &#125;&apos;</span><br><span class="line">JSON.parse(a)</span><br></pre></td></tr></table></figure></p>
-<p>解析后a就变成了对象a={name: “Violet”, occupation: “character” }。这样我们就可以在js中将其使用<br>当然，也可以将js对象变为json字符串<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var a=&#123;name: &quot;Violet&quot;, occupation: &quot;character&quot; &#125;</span><br><span class="line">JSON.stringify(a)</span><br></pre></td></tr></table></figure></p>
-<h2 id="何时需要解析json数据"><a href="#何时需要解析json数据" class="headerlink" title="何时需要解析json数据"></a>何时需要解析json数据</h2><p>当我们从后端拿出来的数据是以json的格式显示出来的，此时我们需要对其处理，即解析。只有解析之后我们才能使用从后端拿出来的数据。</p>
-
+        
+          <h2 id="什么是json"><a href="#什么是json" class="headerlink" title="什么是json"></a>什么是json</h2><p>json(JavaScript Object Notation)是<strong>JavaScript对象表示法</strong>;json是<strong>存储和交换文本信息</strong>的<strong>语法</strong>(类似于XML)，是一种<strong>轻量级</strong>的<strong>文本数据交换格式</strong>,比XML更快更小更易解析。</p>
+<h2 id="json的表示方法"><a href="#json的表示方法" class="headerlink" title="json的表示方法"></a>json的表示方法</h2><p>json的表示方法和对象相似，但又不同。有何不同呢？看个栗子：<br>对象的写法一般是：<br>    <code>var aa ={name:&quot;zoumm&quot;,job :&quot;it&quot;,age :25};</code><br>而json的写法是：<br>    <code>{&quot;name&quot;:&quot;zoumm&quot;,&quot;job&quot;:&quot;it&quot;,&quot;age&quot;:23,&quot;school&quot;:{&quot;name&quot;:&quot;大学名&quot;，“add”:&quot;中国&quot;}}</code><br>由此可以看出：对象的属性名没有加引号，而json对象所有的属性名必须加双引号。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/03/06/json/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
       
-    </div>
+    </p></div>
     
     
     
@@ -532,32 +516,12 @@
       
 
       
-      
+
       
 
       
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2019/03/06/ajax/" rel="next" title="JavaScript中的ajax">
-                <i class="fa fa-chevron-left"></i> JavaScript中的ajax
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/03/07/ACAO/" rel="prev" title="跨域的解决方法">
-                跨域的解决方法 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
       
-
-      
+        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -598,7 +562,9 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">JavaScript中的ajax</h1>
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/03/06/ajax/" itemprop="url">JavaScript中的ajax</a></h1>
         
 
         <div class="post-meta">
@@ -630,11 +596,6 @@
           
 
           
-            <span class="post-meta-divider">|</span>
-            <span class="page-pv"><i class="fa fa-file-o"></i> 阅读数
-            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
-            </span>
-          
 
           
 
@@ -655,14 +616,19 @@
       
 
       
-        <h2 id="什么是ajax"><a href="#什么是ajax" class="headerlink" title="什么是ajax"></a>什么是ajax</h2><p>Ajax 即<strong>Asynchronous Javascript And XML（异步 JavaScript 和 XML）</strong>，是指一种创建交互式网页应用的网页开发技术。换句话说，ajax是一种无需重新加载整个网页的情况下，能够更新部分网页的技术。通过在后台与服务器进行少量数据交换，ajax可以是网页实现异步更新。这意味着可以在不重新加载整个网页的情况下，对网页的某部分进行更新。<br>而传统的网页（不使用 Ajax）如果需要更新内容，必须重载整个网页页面。因此，ajax技术的出现大大提高了用户体验。<br>ajax是异步发送请求，那么什么是异步？什么又是同步呢？我们一起来看看</p>
-<h2 id="异步与同步"><a href="#异步与同步" class="headerlink" title="异步与同步"></a>异步与同步</h2><p>1.同步(Synchronous)<br>    在一个任务进行中时，不能开启其它任务。<br>    同步访问：浏览器在向服务器发送请求时，浏览器只能等待服务器的响应，不能够做其它的事情<br>    出现场合：<br>        (1).地址栏输入网址访问网页(网速不好的时候更明显)<br>        (2).a标签跳转<br>        (3).submit提交表单 跳转之后，前面的表单页面不能再做任何操作了<br><a id="more"></a><br>2.异步(Asynchronous)<br>    在一个任务开启时，可以开启其它任务<br>    异步访问：浏览器在向服务器发送请求时，不耽误用户在网页的其它操作。<br>    出现的场合：<br>        (1).用户名的重复验证<br>        (2).聊天室<br>        (3).搜索建议<br>        (4).股票走势图</p>
-<h2 id="ajax如何实现异步请求"><a href="#ajax如何实现异步请求" class="headerlink" title="ajax如何实现异步请求"></a>ajax如何实现异步请求</h2><p>1.创建异步对象<br>通过<strong>window.XMLHttpRequest</strong>是否存在，来判断浏览器是否支持ajax的标准创建。如果有值，为<strong>true</strong>,进入if块，支持标准创建<br>    <code>var xhr=new XMLHttpRequest();</code><br>如果没有值，为<strong>null</strong>，为false。不支持标准创建<br>    <code>var xhr=new ActiveXObject(&quot;Microsoft.XMLHttp&quot;);</code><br>2.绑定监听事件—接收响应数据<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">xhr.onreadystatechange=function()&#123;</span><br><span class="line">    if(xhr.readyState==4&amp;&amp;xhr.status==200)&#123;</span><br><span class="line">        //接收响应数据</span><br><span class="line">        var result=xhr.responseText;</span><br><span class="line">     &#125;  </span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></p>
-<p>(1)<strong>readyState</strong><br>  用于表示xhr对象的请求状态<br>  值0~4 表示了5个状态<br>  0：请求尚未初始化<br>  1：已经打开到服务器的连接，正在发送请求<br>  2：接收响应头<br>  3：接收响应主体<br>  4：接收响应数据成功<br>(2)<strong>status</strong><br>  表示服务器的响应状态码<br>  值  200<br>  当status的值为<strong>200</strong>的时候，表示服务器已经正确处理了请求<br>(3)<strong>onreadystatechange</strong>–事件，监听器<br>  当xhr的readystate属性值发生改变时，自动激发的操作<br>  接收响应数据<br>3.打开链接(创建请求)<br><code>xhr.open(method,url,isAsyn);</code><br>注：<br>    method:请求的方法  “get”/“post”  string类型<br>    url:请求的地址  string类型<br>    isAsyn:是否采用异步  boolean类型   false同步   true异步<br>4.发送请求<br><code>xhr.send(body);</code><br>如果有请求主体,post,就把请求主体放在body的位置<br>如果没有请求主体，get,body处放null</p>
-<h2 id="ajax的优缺点"><a href="#ajax的优缺点" class="headerlink" title="ajax的优缺点"></a>ajax的优缺点</h2><p>1.优点：<br>    (1)可以使得页面不重载全部内容的情况下加载局部内容，降低数据传输量<br>    (2)避免用户不断刷新或者跳转页面，提高用户体验<br>2.缺点:<br>    (1)要实现ajax下的前后退功能成本较大<br>    (2)可能造成请求数的增加<br>    (3)跨域问题限制</p>
-
+        
+          <h2 id="什么是ajax"><a href="#什么是ajax" class="headerlink" title="什么是ajax"></a>什么是ajax</h2><p>Ajax 即<strong>Asynchronous Javascript And XML（异步 JavaScript 和 XML）</strong>，是指一种创建交互式网页应用的网页开发技术。换句话说，ajax是一种无需重新加载整个网页的情况下，能够更新部分网页的技术。通过在后台与服务器进行少量数据交换，ajax可以是网页实现异步更新。这意味着可以在不重新加载整个网页的情况下，对网页的某部分进行更新。<br>而传统的网页（不使用 Ajax）如果需要更新内容，必须重载整个网页页面。因此，ajax技术的出现大大提高了用户体验。<br>ajax是异步发送请求，那么什么是异步？什么又是同步呢？我们一起来看看</p>
+<h2 id="异步与同步"><a href="#异步与同步" class="headerlink" title="异步与同步"></a>异步与同步</h2><p>1.同步(Synchronous)<br>    在一个任务进行中时，不能开启其它任务。<br>    同步访问：浏览器在向服务器发送请求时，浏览器只能等待服务器的响应，不能够做其它的事情<br>    出现场合：<br>        (1).地址栏输入网址访问网页(网速不好的时候更明显)<br>        (2).a标签跳转<br>        (3).submit提交表单 跳转之后，前面的表单页面不能再做任何操作了<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/03/06/ajax/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
       
-    </div>
+    </p></div>
     
     
     
@@ -677,32 +643,12 @@
       
 
       
-      
+
       
 
       
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2019/03/05/closure/" rel="next" title="浅谈JavaScript中的闭包">
-                <i class="fa fa-chevron-left"></i> 浅谈JavaScript中的闭包
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/03/06/json/" rel="prev" title="json数据">
-                json数据 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
       
-
-      
+        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -743,7 +689,9 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">浅谈JavaScript中的闭包</h1>
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/03/05/closure/" itemprop="url">浅谈JavaScript中的闭包</a></h1>
         
 
         <div class="post-meta">
@@ -775,11 +723,6 @@
           
 
           
-            <span class="post-meta-divider">|</span>
-            <span class="page-pv"><i class="fa fa-file-o"></i> 阅读数
-            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
-            </span>
-          
 
           
 
@@ -800,13 +743,16 @@
       
 
       
-        <h2 id="什么是闭包"><a href="#什么是闭包" class="headerlink" title="什么是闭包"></a>什么是闭包</h2><p>闭包是一个拥有许多变量和绑定了这些变量的环境的表达式（通常是一个函数），因而这些变量也是该表达式的一部分。<br>换句话说：闭包就是<strong>能够读取其他函数内部变量的函数</strong>。只有<strong>函数内部</strong>的<strong>子函数</strong>才能读取<strong>局部变量</strong>，所以闭包可以理解成<strong>定义在一个函数内部的函数</strong>。在本质上，闭包是将函数内部和函数外部连接起来的<strong>桥梁</strong>。<br>来 看一个栗子：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">function outter()&#123;</span><br><span class="line">    var i = 0;</span><br><span class="line">    function inner()&#123;</span><br><span class="line">        alert(++i)</span><br><span class="line">    &#125;</span><br><span class="line">    return inner;</span><br><span class="line">&#125;</span><br><span class="line">var res = outter();</span><br><span class="line">res()</span><br></pre></td></tr></table></figure></p>
-<a id="more"></a>
-<p>这段代码有两个特点：<br>  1、<strong>内层函数inner被外层函数outter包裹</strong><br>  2、<strong>执行函数outter返回函数inner</strong><br>这样执行完var res = outter()后，变量<strong>res</strong>实际上是<strong>指向</strong>了函数<strong>inner</strong>，inner中用到了变量i，再执行res()后就会弹出一个窗口显示i的值。这段代码其实就创建了一个闭包。<br>说简单一点：当函数outter的内部函数inner被函数outter外的一个变量引用的时候，就创建了一个我们通常所谓的<strong>闭包</strong></p>
-<h2 id="闭包的作用"><a href="#闭包的作用" class="headerlink" title="闭包的作用"></a>闭包的作用</h2><p>闭包的作用就是在outter执行完并返回后，闭包使得Javascript的垃圾回收机制不会收回outter所占用的资源，因为outer的内部函数inner的执行需要依赖outter中的变量。<br>在上面的例子中，由于闭包的存在使得函数outter返回后，outter中的i始终存在，这样每次执行c()，i都是自加1后alert出i的值。那么我们来想象另一种情况，如果outter返回的不是函数inner，情况就完全不同了。因为outter执行完后，inner没有被返回给outter的外界，只是被outter所引用，而此时outter也只会被inner引 用，因此函数outter和inner互相引用但又不被外界打扰（被外界引用），函数outter和inner就会被回收</p>
-<h2 id="何时使用闭包"><a href="#何时使用闭包" class="headerlink" title="何时使用闭包"></a>何时使用闭包</h2><p>当一个变量需要被保护，使其不会被全局污染时使用</p>
-<h2 id="使用注意"><a href="#使用注意" class="headerlink" title="使用注意"></a>使用注意</h2><p>1、由于闭包会使得函数中的变量都被<strong>保存在内存中</strong>，内存消耗很大，所以<strong>不能滥用</strong>闭包，否则会造成网页的性能问题，在IE中可能导致<strong>内存泄露</strong>。解决方法是，在退出函数之前，将不使用的局部变量全部删除。<br>2、闭包会在父函数外部，改变父函数内部变量的值。所以，如果把父函数当作对象（object）使用，把闭包当作它的公用方法（Public Method），把内部变量当作它的私有属性（private value），这时一定要小心，<strong>不要随便改变父函数内部变量的值</strong>。</p>
-
+        
+          <h2 id="什么是闭包"><a href="#什么是闭包" class="headerlink" title="什么是闭包"></a>什么是闭包</h2><p>闭包是一个拥有许多变量和绑定了这些变量的环境的表达式（通常是一个函数），因而这些变量也是该表达式的一部分。<br>换句话说：闭包就是<strong>能够读取其他函数内部变量的函数</strong>。只有<strong>函数内部</strong>的<strong>子函数</strong>才能读取<strong>局部变量</strong>，所以闭包可以理解成<strong>定义在一个函数内部的函数</strong>。在本质上，闭包是将函数内部和函数外部连接起来的<strong>桥梁</strong>。<br>来 看一个栗子：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">function outter()&#123;</span><br><span class="line">    var i = 0;</span><br><span class="line">    function inner()&#123;</span><br><span class="line">        alert(++i)</span><br><span class="line">    &#125;</span><br><span class="line">    return inner;</span><br><span class="line">&#125;</span><br><span class="line">var res = outter();</span><br><span class="line">res()</span><br></pre></td></tr></table></figure></p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/03/05/closure/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
       
     </div>
     
@@ -823,32 +769,12 @@
       
 
       
-      
+
       
 
       
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2019/03/05/my first blog/" rel="next" title="My First Blog">
-                <i class="fa fa-chevron-left"></i> My First Blog
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/03/06/ajax/" rel="prev" title="JavaScript中的ajax">
-                JavaScript中的ajax <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
       
-
-      
+        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -889,7 +815,9 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">My First Blog</h1>
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/03/05/my first blog/" itemprop="url">My First Blog</a></h1>
         
 
         <div class="post-meta">
@@ -921,11 +849,6 @@
           
 
           
-            <span class="post-meta-divider">|</span>
-            <span class="page-pv"><i class="fa fa-file-o"></i> 阅读数
-            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
-            </span>
-          
 
           
 
@@ -946,9 +869,13 @@
       
 
       
-        <p>Welcome to Xiao Cheng’s blog. If there is anything wrong, please do more correction.My <a href="withc580231@163.com">email</a>.</p>
+        
+          
+            <p>Welcome to Xiao Cheng’s blog. If there is anything wrong, please do more correction.My <a href="withc580231@163.com">email</a>.</p>
 <h2 id="instruction"><a href="#instruction" class="headerlink" title="instruction"></a>instruction</h2><p>Here, I’m going to make some of my personal understandings about the front-end with the front-end of the web. If there’s something wrong, or there’s a better way to welcome you. Thank you.</p>
 
+          
+        
       
     </div>
     
@@ -965,28 +892,12 @@
       
 
       
-      
+
       
 
       
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/03/05/closure/" rel="prev" title="浅谈JavaScript中的闭包">
-                浅谈JavaScript中的闭包 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
       
-
-      
+        <div class="post-eof"></div>
       
     </footer>
   </div>

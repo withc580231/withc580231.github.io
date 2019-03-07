@@ -312,9 +312,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/03/07/ACAO/" itemprop="url">跨域的解决方法</a></h1>
+          <h1 class="post-title" itemprop="name headline">跨域的解决方法</h1>
         
 
         <div class="post-meta">
@@ -346,6 +344,11 @@
           
 
           
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i> 阅读数
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
 
           
             <span class="post-meta-divider">|</span>
@@ -369,13 +372,9 @@
       
 
       
-        
-          
-            <h2 id="什么是跨域"><a href="#什么是跨域" class="headerlink" title="什么是跨域"></a>什么是跨域</h2><p>从一个域名下的网页，向另一个域名下的服务端发送请求。这时候就会出现跨域问题。例如：<br>1.域名不同: <a href="http://www.a.com/index.js" target="_blank" rel="noopener">www.a.com/index.js</a>  -&gt; <a href="http://www.b.com/index" target="_blank" rel="noopener">www.b.com/index</a><br>2.二级域名不同: <a href="http://www.a.study.com/index.js" target="_blank" rel="noopener">www.a.study.com/index.js</a>  -&gt; <a href="http://www.b.study.com/index" target="_blank" rel="noopener">www.b.study.com/index</a><br>3.端口不同: localhost:5500  -&gt;localhost:8000<br>4.协议不同: <a href="http://localhost" target="_blank" rel="noopener">http://localhost</a>  -&gt;  <a href="https://localhost" target="_blank" rel="noopener">https://localhost</a><br>5.域名 -&gt; IP地址<br>以上五种情况，均禁止ajax发送异步请求。</p>
+        <h2 id="什么是跨域"><a href="#什么是跨域" class="headerlink" title="什么是跨域"></a>什么是跨域</h2><p>从一个域名下的网页，向另一个域名下的服务端发送请求。这时候就会出现跨域问题。例如：<br>1.域名不同: <a href="http://www.a.com/index.js" target="_blank" rel="noopener">www.a.com/index.js</a>  -&gt; <a href="http://www.b.com/index" target="_blank" rel="noopener">www.b.com/index</a><br>2.二级域名不同: <a href="http://www.a.study.com/index.js" target="_blank" rel="noopener">www.a.study.com/index.js</a>  -&gt; <a href="http://www.b.study.com/index" target="_blank" rel="noopener">www.b.study.com/index</a><br>3.端口不同: localhost:5500  -&gt;localhost:8000<br>4.协议不同: <a href="http://localhost" target="_blank" rel="noopener">http://localhost</a>  -&gt;  <a href="https://localhost" target="_blank" rel="noopener">https://localhost</a><br>5.域名 -&gt; IP地址<br>以上五种情况，均禁止ajax发送异步请求。</p>
 <h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>1.JSONP：<br>原理：动态插入script标签，通过script标签引入一个js文件，这个js文件载入成功后会执行我们在url参数中指定的函数，并且会把我们需要的json数据作为参数传入。<br>由于同源策略的限制，XmlHttpRequest只允许请求当前源（域名、协议、端口）的资源，为了实现跨域请求，可以通过script标签实现跨域请求，然后在服务端输出JSON数据并执行回调函数，从而解决了跨域的数据请求。<br>优点是兼容性好，简单易用，支持浏览器与服务器双向通信。缺点是只支持GET请求。<br>JSONP：json+padding（内填充），顾名思义，就是把JSON填充到一个盒子里<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    function createJs(sUrl)&#123;</span><br><span class="line"></span><br><span class="line">        var oScript = document.createElement(&apos;script&apos;);</span><br><span class="line">        oScript.type = &apos;text/javascript&apos;;</span><br><span class="line">        oScript.src = sUrl;</span><br><span class="line">        document.getElementsByTagName(&apos;head&apos;)[0].appendChild(oScript);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    createJs(&apos;jsonp.js&apos;);</span><br><span class="line"></span><br><span class="line">    box(&#123;</span><br><span class="line">       &apos;name&apos;: &apos;test&apos;</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    function box(json)&#123;</span><br><span class="line">        alert(json.name);</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
 
-          
-        
       
     </div>
     
@@ -392,12 +391,28 @@
       
 
       
+      
+      
 
       
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/03/06/json/" rel="next" title="json数据">
+                <i class="fa fa-chevron-left"></i> json数据
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
 
       
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
