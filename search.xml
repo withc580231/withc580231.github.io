@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[JavaScript基础知识]]></title>
+    <url>%2F2019%2F03%2F16%2FJS%2F</url>
+    <content type="text"><![CDATA[## 标识符所谓标识符，就是指变量、函数、属性的名字，或则函数的参数。标识符可以是按照下列格式规则组合起来的一或多个字符： 1.第一个字符必须是一个字母、下划线(_)或则一个美元符号($); 2.其他字符可以是字母、下划线、美元符号或数字; 3.不能把关键字、保留字、true、false和boolean作为标识符。 数据类型JS中数据类型分为两类：原始数据类型、引用数据类型。1.原始数据类型又分为：数值型(number)、字符串型(string)、布尔型(boolean)、未定义型(undefined)、空(null)。2.引用数据类型又分为：对象、数组等。 数据类型–隐式转换1.数字+字符串==&gt;string1+&quot;a&quot;; //&quot;1a&quot;2.数字+布尔==&gt;number1+true; //21+false; //13.字符串+布尔==&gt;string&quot;hello&quot;+true; //&quot;hellotrue&quot;由此可知：任何数据和字符串执行加法运算，结果都为字符串。 数据类型–强制转换1.将任意数据类型转换为整型，如果转换失败则返回NaN。–parseInt()parseInt(&quot;123abc&quot;); //123parseInt(&quot;a&quot;); //NaN2.将任意类型数据转为浮点型，如果转换失败返回NaN。–parseFloat()parseFloat(&#39;1.5&#39;) //1.53.将任意类型数据转为数值型。–Number()Number(&#39;1.5&#39;) //1.5Number(&#39;1.5a&#39;) //NaN如果要转换的字符串中含有非数字，则返回NaN4.将任意类型数据转为字符串。–toString()var num=20;num.toString(16);在转为字符串的同时，可以将数据转为2,8,16进制 逻辑短路&amp;&amp; 如果第1个条件为false的时候，就不需要再执行第2个条件|| 如果第1个条件为true的时候，就不需要再执行第2个条件]]></content>
+  </entry>
+  <entry>
     <title><![CDATA[JavaScript中new都做了哪些事儿]]></title>
     <url>%2F2019%2F03%2F10%2Fnew%2F</url>
     <content type="text"><![CDATA[关于new的介绍new运算符创建一个用户定义的对象类型的实例或具有构造函数的内置对象的实例举个栗子：123456789function Car(color)&#123; this.color = color;&#125;Car.prototype.start = function()&#123; console.log(this.color + &quot;car start&quot;);&#125;var car = new Car(&quot;black&quot;);car.color;//访问构造函数里的属性，结果为blackcar.start();//访问原型里的属性，结果为black car start 可以看出new创建的实例有以下2个特征：1.访问到构造函数里的属性2.访问到原型里的属性 new具体干了什么new一共经历以下4个阶段：1、创建一个空对象var obj = new Object();2、设置原型链此时便建立了obj对象的原型链obj.__proto__ = Object.prototype;3、让Func的this指向obj，并执行Func函数体Object.call(obj);4、判断Func的返回值类型如果是值类型，返回obj；如果是引用类型，返回这个引用类型的对象。return typeof result === &#39;obj&#39;? result : obj;简单来说就是：首先创建新的对象; 然后将构造函数作用域指向该对象; 其次执行构造函数里的代码; 最后返回该对象;]]></content>
