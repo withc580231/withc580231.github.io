@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="HC-FWI的博客">
 <meta property="og:description" content="let/const: 代替var/const来声明变量和常量1.因为传统的var和const会被声明提前；2.没有块级作用域: for  if   while都不是作用域，其中的变量会被提前到外部，影响外部的代码。使用后:1.不会被提前，不允许提前使用未声明的变量；2.让for if  while等程序块，也变为作用域原理: let自动添加匿名函数自调来划分临时作用域，并将变量名前自动加_，与其他">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-19T09:11:11.922Z">
+<meta property="og:updated_time" content="2019-03-19T09:18:35.489Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ES6新特性">
 <meta name="twitter:description" content="let/const: 代替var/const来声明变量和常量1.因为传统的var和const会被声明提前；2.没有块级作用域: for  if   while都不是作用域，其中的变量会被提前到外部，影响外部的代码。使用后:1.不会被提前，不允许提前使用未声明的变量；2.让for if  while等程序块，也变为作用域原理: let自动添加匿名函数自调来划分临时作用域，并将变量名前自动加_，与其他">
@@ -377,7 +377,7 @@
 <h2 id="箭头函数-对一切回调函数或匿名函数自调的简写"><a href="#箭头函数-对一切回调函数或匿名函数自调的简写" class="headerlink" title="箭头函数: 对一切回调函数或匿名函数自调的简写"></a>箭头函数: 对一切回调函数或匿名函数自调的简写</h2><p>如何使用: 回调函数: function (形参,…){ … }；<br>    可简化为: (形参,…)=&gt;{ … }；<br>    如果只有一个形参，可省略()；<br>    如果函数体中只有一句话，可省略{}；<br>    如果这仅有的一句话还是return xxx，则必须省略return。<br>特点: 箭头函数内外的this是同一个/共通的。<br>注意: 如果希望内外this相同时，应该简化；如果反而希望内外this不同时，不能简化。</p>
 <h2 id="参数解构-从一个大的对象中抽取想要的部分成员，单独使用"><a href="#参数解构-从一个大的对象中抽取想要的部分成员，单独使用" class="headerlink" title="参数解构: 从一个大的对象中抽取想要的部分成员，单独使用"></a>参数解构: 从一个大的对象中抽取想要的部分成员，单独使用</h2><p>1.数组解构: 从数组中抽取想要的元素出来，单独使用<br>如何使用: 下标对下标:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var arr=[1,2,3];</span><br><span class="line">var [x,y,z]=arr;</span><br><span class="line">console.log(x,y,z); //x=1, y=2, z=3</span><br></pre></td></tr></table></figure></p>
 <p>2.对象解构: 从对象中抽取想要的成员出来，单独使用<br>如何使用: 属性名对属性名<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var obj=&#123;x:1, y:2, z:3&#125;;</span><br><span class="line">var &#123;x,y,z&#125;=obj; //x属性值为1、y属性值为2、z属性值为3</span><br></pre></td></tr></table></figure></p>
-<h2 id="Promise-代替回调函数，实现多个异步调用，顺序执行"><a href="#Promise-代替回调函数，实现多个异步调用，顺序执行" class="headerlink" title="Promise: 代替回调函数，实现多个异步调用，顺序执行"></a>Promise: 代替回调函数，实现多个异步调用，顺序执行</h2><p>问题: 使用回调函数方式实现多个异步调用顺序执行会导致回调地狱(callback hell)<br>根源: 所有回调函数规定，在调用函数前，就要提前传入到函数中<br>解决: 让回调函数在函数后传入<br>如何: 前提: 不要在参数列表里传递回调函数了！<br>具体实现方案前面有提到，可点击此处查看<a href="../../public/2019/03/07/promise/index.html">_post/promise.md</a>。</p>
+<h2 id="Promise-代替回调函数，实现多个异步调用，顺序执行"><a href="#Promise-代替回调函数，实现多个异步调用，顺序执行" class="headerlink" title="Promise: 代替回调函数，实现多个异步调用，顺序执行"></a>Promise: 代替回调函数，实现多个异步调用，顺序执行</h2><p>问题: 使用回调函数方式实现多个异步调用顺序执行会导致回调地狱(callback hell)<br>根源: 所有回调函数规定，在调用函数前，就要提前传入到函数中<br>解决: 让回调函数在函数后传入<br>如何: 前提: 不要在参数列表里传递回调函数了！<br>具体实现方案前面有提到，可点击此处查看<a href="2019/03/07/promise">promise总结篇</a>。</p>
 
       
     </div>
