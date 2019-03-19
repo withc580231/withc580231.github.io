@@ -295,6 +295,133 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/19/ES6/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Huang Cheng">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HC-FWI的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/03/19/ES6/" itemprop="url">ES6新特性</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-19T16:30:10+08:00">
+                2019-03-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="let-const-代替var-const来声明变量和常量"><a href="#let-const-代替var-const来声明变量和常量" class="headerlink" title="let/const: 代替var/const来声明变量和常量"></a>let/const: 代替var/const来声明变量和常量</h2><p>1.因为传统的var和const会被声明提前；<br>2.没有块级作用域: for  if   while都不是作用域，其中的变量会被提前到外<br>部，影响外部的代码。<br>使用后:<br>1.不会被提前，不允许提前使用未声明的变量；<br>2.让for if  while等程序块，也变为作用域原理: let自动添加匿名函数自调来<br>划分临时作用域，并将变量名前自动加_，与其他变量区分。</p>
+<h2 id="参数增强"><a href="#参数增强" class="headerlink" title="参数增强"></a>参数增强</h2><p>1.默认值(default): 即使用户不传入参数，参数也有备用的默认值代替<br>如何使用:定义函数时: function fun(形参,…,形参=默认值)；<br>注意:有默认值得参数，必须在形参列表的末尾。<br>2.剩余参数(rest): 代替arguments接收所有不确定个数的参数<br>使用arguments有两个问题:<br>1.不是数组类型，不能使用数组API<br>2.只能获得全部参数，无法有选择的获得部分<br>    如何: 定义函数时: function fun(形参,…, …数组名)<br>       其中: 数组可收集除前几个确定参数之外的剩余参数<br>3.散播(spread): 代替apply专门用于打散数组为单个元素，再传入函数。<br>apply的问题: 主要功能是替换this，顺便可以打散数组为单个值。<br>如何: 调用函数时: fun(…数组)<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/03/19/ES6/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </p></div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/17/css_center/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1425,132 +1552,13 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/05/my first blog/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Huang Cheng">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="HC-FWI的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/03/05/my first blog/" itemprop="url">My First Blog</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-05T10:31:35+08:00">
-                2019-03-05
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Welcome to Xiao Cheng’s blog. If there is anything wrong, please do more correction.My <a href="withc580231@163.com">email</a>.</p>
-<h2 id="instruction"><a href="#instruction" class="headerlink" title="instruction"></a>instruction</h2><p>Here, I’m going to make some of my personal understandings about the front-end with the front-end of the web. If there’s something wrong, or there’s a better way to welcome you. Thank you.</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
 
 
           </div>
@@ -1596,7 +1604,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
