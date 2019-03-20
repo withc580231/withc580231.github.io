@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="HC-FWI的博客">
 <meta property="og:description" content="一、水平居中1.行内元素水平居中利用text-align：center可以实现在块级元素内部的行内元素水平居中。123.parent&amp;#123;//在父容器设置    text-align:center;&amp;#125; 2.块级元素的水平居中(1).将该块级元素左右外边距设置为auto1234.child&amp;#123;    width:100px;//确保该块级元素定宽    margin:0 au">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-17T11:10:36.307Z">
+<meta property="og:updated_time" content="2019-03-19T09:37:59.124Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="如何居中一个元素">
 <meta name="twitter:description" content="一、水平居中1.行内元素水平居中利用text-align：center可以实现在块级元素内部的行内元素水平居中。123.parent&amp;#123;//在父容器设置    text-align:center;&amp;#125; 2.块级元素的水平居中(1).将该块级元素左右外边距设置为auto1234.child&amp;#123;    width:100px;//确保该块级元素定宽    margin:0 au">
@@ -384,8 +384,7 @@
 <p>(3)使用flex+align-items<br>通过设置flex布局中的属性align-items，使子元素垂直居中。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">.parent&#123;</span><br><span class="line">    display:flex;</span><br><span class="line">    align-items:center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>三.水平垂直居中<br>1.绝对定位与负边距实现(已知高度和宽度)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">#container&#123;</span><br><span class="line">    position:relative;</span><br><span class="line">&#125;</span><br><span class="line">#center&#123;</span><br><span class="line">    position:absolute;</span><br><span class="line">    top:50%;</span><br><span class="line">    left:50%;</span><br><span class="line">    margin:-50px 0 0 -50px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>2.绝对定位+css3(未知元素的高度和宽度)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">#container&#123;</span><br><span class="line">    position:relative;</span><br><span class="line">&#125;</span><br><span class="line">#&#123;</span><br><span class="line">    position:absolute;</span><br><span class="line">    top:50%;</span><br><span class="line">    left:50%;</span><br><span class="line">    transform:translate(-50%,-50%);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>3.flex布局<br><code>`</code></p>
-<p>#container{<br>    height:100vh;//必须有高度<br>    display:flex;<br>    justify-content:center;<br>    align-items:center;<br>}</p>
+<p>3.flex布局<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">#container&#123;</span><br><span class="line">    height:100vh;//必须有高度</span><br><span class="line">    display:flex;</span><br><span class="line">    justify-content:center;</span><br><span class="line">    align-items:center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -497,7 +496,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
