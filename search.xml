@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[布局方式--响应式布局]]></title>
     <url>%2F2019%2F04%2F29%2Fresponse_layout%2F</url>
-    <content type="text"><![CDATA[响应式布局可以根据浏览器设备的不同(pc/pad/phone)自动的更改布局，图片，文字效果，不会影响用户浏览体验 使用响应式布局的要求1.布局：不能固定宽度，必须是流式布局2.文字和图片大小随着容器大小而改变，单位为em、rem、%3.媒体查询技术(根据不同的设备类型，使用不同的显示效果) 如何编写响应式网页1.在meta中声明viewport元标签` `2.所有内容/文字/图片 使用相对尺寸，不要使用绝对值123456.container&#123; width:1000px;//不可取 width:100%; font-size:16px; //不可取 font-size:1rem;&#125; 3.使用流式布局+弹性布局，再搭配媒体查询技术 实现方式 float+flex4.使用CSS3 Media Query技术123@media screen and (min-widht:768px) and (max-width:991px)&#123; 选择器&#123;样式&#125;&#125;]]></content>
+    <content type="text"><![CDATA[响应式布局可以根据浏览器设备的不同(pc/pad/phone)自动的更改布局，图片，文字效果，不会影响用户浏览体验 使用响应式布局的要求1.布局：不能固定宽度，必须是流式布局2.文字和图片大小随着容器大小而改变，单位为em、rem、%3.媒体查询技术(根据不同的设备类型，使用不同的显示效果) 如何编写响应式网页1.在meta中声明viewport元标签1&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0&quot;&gt; 2.所有内容/文字/图片 使用相对尺寸，不要使用绝对值123456.container&#123; width:1000px;//不可取 width:100%; font-size:16px; //不可取 font-size:1rem;&#125; 3.使用流式布局+弹性布局，再搭配媒体查询技术 实现方式 float+flex4.使用CSS3 Media Query技术123@media screen and (min-widht:768px) and (max-width:991px)&#123; 选择器&#123;样式&#125;&#125;]]></content>
   </entry>
   <entry>
     <title><![CDATA[布局方式--弹性布局]]></title>
