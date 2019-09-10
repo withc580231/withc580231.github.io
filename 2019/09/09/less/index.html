@@ -1,0 +1,1098 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="LESSLess 是一门 CSS 预处理语言，它扩充了 CSS 语言，增加了诸如变量、混合（mixin）、函数等功能，让 CSS 更易维护、方便制作主题、扩充。Less 可以运行在 Node、浏览器和 Rhino 平台上。网上有很多第三方工具帮助你编译 Less 源码。 如何在vue项目中使用less1.安装less依赖：npm install less less-loader --save2.在">
+<meta name="keywords" content="Fighting">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS预处理器--LESS篇">
+<meta property="og:url" content="http://yoursite.com/2019/09/09/less/index.html">
+<meta property="og:site_name" content="HC-FWI的博客">
+<meta property="og:description" content="LESSLess 是一门 CSS 预处理语言，它扩充了 CSS 语言，增加了诸如变量、混合（mixin）、函数等功能，让 CSS 更易维护、方便制作主题、扩充。Less 可以运行在 Node、浏览器和 Rhino 平台上。网上有很多第三方工具帮助你编译 Less 源码。 如何在vue项目中使用less1.安装less依赖：npm install less less-loader --save2.在">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-09-10T12:50:34.347Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CSS预处理器--LESS篇">
+<meta name="twitter:description" content="LESSLess 是一门 CSS 预处理语言，它扩充了 CSS 语言，增加了诸如变量、混合（mixin）、函数等功能，让 CSS 更易维护、方便制作主题、扩充。Less 可以运行在 Node、浏览器和 Rhino 平台上。网上有很多第三方工具帮助你编译 Less 源码。 如何在vue项目中使用less1.安装less依赖：npm install less less-loader --save2.在">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/09/09/less/">
+
+
+
+
+
+  <title>CSS预处理器--LESS篇 | HC-FWI的博客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">HC-FWI的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">约定未来，不忘初心</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/09/less/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Huang Cheng">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HC-FWI的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">CSS预处理器--LESS篇</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-09T20:01:03+08:00">
+                2019-09-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i> 阅读数
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span id="busuanzi_value_page_pv"></span>次阅读
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="LESS"><a href="#LESS" class="headerlink" title="LESS"></a>LESS</h2><p>Less 是一门 CSS 预处理语言，它扩充了 CSS 语言，增加了诸如变量、混合（mixin）、函数等功能，让 CSS 更易维护、方便制作主题、扩充。Less 可以运行在 Node、浏览器和 Rhino 平台上。网上有很多第三方工具帮助你编译 Less 源码。</p>
+<h2 id="如何在vue项目中使用less"><a href="#如何在vue项目中使用less" class="headerlink" title="如何在vue项目中使用less"></a>如何在vue项目中使用less</h2><p>1.安装less依赖：<br><code>npm install less less-loader --save</code><br>2.在build/webpack.base.conf.js文件中:<br>在module的rules添加如下配置：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  test: /\/less$/,</span><br><span class="line">  loader: &quot;style-loader!css-loader!less-loader&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>3.在style标签上添加lang属性，指定使用的样式语法:<br><code>&lt;style scoped lang=&quot;less&quot;&gt;&lt;/style&gt;</code><br>配置文成，这样就可以在vue项目中使用less啦。</p>
+<h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><h3 id="普通变量"><a href="#普通变量" class="headerlink" title="普通变量"></a>普通变量</h3><p>less 以@开头定义变量，并且使用时直接键入@名称。注意：作为属性值的变量不能添加大括号<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">@color:#333;</span><br><span class="line">.container&#123;</span><br><span class="line">  Background：@color；</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>注意：Less其变量只能定义一次，不能重复定义，否则后面的会类似与js的变量提升，覆盖前面的变量</p>
+<h3 id="选择器变量"><a href="#选择器变量" class="headerlink" title="选择器变量"></a>选择器变量</h3><p>选择器变量，让选择器变成一个动态的。作为选择器的变量在使用的时候需要添加大括号，变量的前面可以添加选择操作符。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">@mySelector: #wrap;</span><br><span class="line">@Wrap: wrap;</span><br><span class="line">@&#123;mySelector&#125;&#123; //变量名 必须使用大括号包裹</span><br><span class="line">  color: #999;</span><br><span class="line">  width: 50%;</span><br><span class="line">&#125;</span><br><span class="line">.@&#123;Wrap&#125;&#123;</span><br><span class="line">  color:#ccc;</span><br><span class="line">&#125;</span><br><span class="line">#@&#123;Wrap&#125;&#123;</span><br><span class="line">  color:#666;</span><br><span class="line">&#125;  </span><br><span class="line">/* 生成的 CSS */</span><br><span class="line">#wrap&#123;</span><br><span class="line">  color: #999;</span><br><span class="line">  width: 50%;</span><br><span class="line">&#125;</span><br><span class="line">.wrap&#123;</span><br><span class="line">  color:#ccc;</span><br><span class="line">&#125;</span><br><span class="line">#wrap&#123;</span><br><span class="line">  color:#666;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="属性变量"><a href="#属性变量" class="headerlink" title="属性变量"></a>属性变量</h3><p>可以在书写的时候少写很多内容，属性变量使用的时候也需要添加大括号<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">@borderStyle: border-style;</span><br><span class="line">@Soild:solid;</span><br><span class="line">#wrap&#123;</span><br><span class="line">  @&#123;borderStyle&#125;: @Soild;//变量名 必须使用大括号包裹</span><br><span class="line">&#125;</span><br><span class="line">/* 生成的 CSS */</span><br><span class="line">#wrap&#123;</span><br><span class="line">  border-style:solid;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="url变量"><a href="#url变量" class="headerlink" title="url变量"></a>url变量</h3><p>项目结构改变时，可以方便我们修改，目的是为了方便项目的维护<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">@images: &quot;../img&quot;;//需要加引号</span><br><span class="line">body &#123;</span><br><span class="line">  background: url(&quot;@&#123;images&#125;/dog.png&quot;);//变量名 必须使用大括号包裹</span><br><span class="line">&#125;</span><br><span class="line">/* 生成的 CSS */</span><br><span class="line">body &#123;</span><br><span class="line">  background: url(&quot;../img/dog.png&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="声明变量"><a href="#声明变量" class="headerlink" title="声明变量"></a>声明变量</h3><p>定义：@name：{<br>  Key：value；<br>  Key：value；<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">@background: &#123;background:red;&#125;;</span><br><span class="line">#main&#123;</span><br><span class="line">    @background();</span><br><span class="line">&#125;</span><br><span class="line">@Rules:&#123;</span><br><span class="line">    width: 200px;</span><br><span class="line">    height: 200px;</span><br><span class="line">    border: solid 1px red;</span><br><span class="line">&#125;;</span><br><span class="line">#con&#123;</span><br><span class="line">  @Rules();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/* 生成的 CSS */</span><br><span class="line">#main&#123;</span><br><span class="line">  background:red;</span><br><span class="line">&#125;</span><br><span class="line">#con&#123;</span><br><span class="line">  width: 200px;</span><br><span class="line">  height: 200px;</span><br><span class="line">  border: solid 1px red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<h3 id="变量运算"><a href="#变量运算" class="headerlink" title="变量运算"></a>变量运算</h3><p>加减法时，以第一个数据的单位为基准；乘除法时，注意单位一定要统一<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">@width:300px;</span><br><span class="line">@color:#222;</span><br><span class="line">#wrap&#123;</span><br><span class="line">  width:@width-20;</span><br><span class="line">  height:@width-20*5;</span><br><span class="line">  margin:(@width-20)*5;</span><br><span class="line">  color:@color*2;</span><br><span class="line">  background-color:@color + #111;</span><br><span class="line">&#125;</span><br><span class="line">/* 生成的 CSS */</span><br><span class="line">#wrap&#123;</span><br><span class="line">  width:280px;</span><br><span class="line">  height:200px;</span><br><span class="line">  margin:1400px;</span><br><span class="line">  color:#444;</span><br><span class="line">  background-color:#333;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="使用变量定义变量"><a href="#使用变量定义变量" class="headerlink" title="使用变量定义变量"></a>使用变量定义变量</h3><p>解析的顺序是从后向前逐层解析<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">@fnord:  &quot;I am fnord.&quot;;</span><br><span class="line">@var:    &quot;fnord&quot;;</span><br><span class="line">#wrap::after&#123;</span><br><span class="line">  content: @@var; //将@var替换为其值 content:@fnord;</span><br><span class="line">&#125;</span><br><span class="line">/* 生成的 CSS */</span><br><span class="line">#wrap::after&#123;</span><br><span class="line">  content: &quot;I am fnord.&quot;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="嵌套"><a href="#嵌套" class="headerlink" title="嵌套"></a>嵌套</h2><p>&amp;符号，表示的是上1级选择器的名字。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">#header&#123;</span><br><span class="line">  &amp;:after&#123; //注意：不能省略&amp;，如果省略会给每一个子元素添加一个after。</span><br><span class="line">    content:&quot;Less is more!&quot;;</span><br><span class="line">  &#125;</span><br><span class="line">  .title&#123;</span><br><span class="line">    font-weight:bold;</span><br><span class="line">  &#125;</span><br><span class="line">  &amp;_content&#123;//理解方式：直接把 &amp; 替换成 #header</span><br><span class="line">    margin:20px;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">/* 生成的 CSS */</span><br><span class="line">#header::after&#123;</span><br><span class="line">  content:&quot;Less is more!&quot;;</span><br><span class="line">&#125;</span><br><span class="line">#header .title&#123; //嵌套了</span><br><span class="line">  font-weight:bold;</span><br><span class="line">&#125;</span><br><span class="line">#header_content&#123;//没有嵌套！</span><br><span class="line">    margin:20px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>嵌套覆盖原有样式<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">div&#123;</span><br><span class="line">  width:200px;</span><br><span class="line">  height:200px;</span><br><span class="line">  background:red;</span><br><span class="line">  .show&#123;</span><br><span class="line">      display: none;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">.show&#123;</span><br><span class="line">  display: block; //被覆盖，只有在div使用show时才覆盖</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="混合方法"><a href="#混合方法" class="headerlink" title="混合方法"></a>混合方法</h2><h3 id="具体参数方法"><a href="#具体参数方法" class="headerlink" title="具体参数方法"></a>具体参数方法</h3><p>less可以传递参数<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">.setSize(@width_size,@height_size)&#123;</span><br><span class="line">  width:@width_size;</span><br><span class="line">  height:@height_size;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="默认参数法"><a href="#默认参数法" class="headerlink" title="默认参数法"></a>默认参数法</h3><p>默认参数方法：Less 可以使用默认参数，如果没有传参数，那么将使用默认参数。 @arguments 犹如 JS 中的 arguments 指代的是全部参数。 传的参数中 必须带着单位。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">.border(@a:10px,@b:50px,@c:30px,@color:#000)&#123;</span><br><span class="line">    border:solid 1px @color;</span><br><span class="line">    box-shadow: @arguments;//指代的是 全部参数</span><br><span class="line">&#125;</span><br><span class="line">#main&#123;</span><br><span class="line">    .border(0px,5px,30px,red);//必须带着单位</span><br><span class="line">&#125;</span><br><span class="line">#wrap&#123;</span><br><span class="line">    .border(0px);</span><br><span class="line">&#125;</span><br><span class="line">#content&#123;</span><br><span class="line">  .border;//等价于 .border()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/* 生成的 CSS */</span><br><span class="line">#main&#123;</span><br><span class="line">    border:solid 1px red;</span><br><span class="line">    box-shadow:0px,5px,30px,red;</span><br><span class="line">&#125;</span><br><span class="line">#wrap&#123;</span><br><span class="line">    border:solid 1px #000;</span><br><span class="line">    box-shadow: 0px 50px 30px #000;</span><br><span class="line">&#125;</span><br><span class="line">#content&#123;</span><br><span class="line">    border:solid 1px #000;</span><br><span class="line">    box-shadow: 10px 50px 30px #000;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="不定参"><a href="#不定参" class="headerlink" title="不定参"></a>不定参</h3><p>不确定参数的个数<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">.boxShadow(...)&#123;</span><br><span class="line">    box-shadow: @arguments;</span><br><span class="line">&#125;</span><br><span class="line">.textShadow(@a,...)&#123;</span><br><span class="line">    text-shadow: @arguments;</span><br><span class="line">&#125;</span><br><span class="line">#main&#123;</span><br><span class="line">    .boxShadow(1px,4px,30px,red);</span><br><span class="line">    .textShadow(1px,4px,30px,red);</span><br><span class="line">&#125;</span><br><span class="line">/* 生成后的 CSS */</span><br><span class="line">#main&#123;</span><br><span class="line">  box-shadow: 1px 4px 30px red;</span><br><span class="line">  text-shadow: 1px 4px 30px red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="方法的匹配模式"><a href="#方法的匹配模式" class="headerlink" title="方法的匹配模式"></a>方法的匹配模式</h3><p>方法的匹配模式：同一个方法名的多个方法，由于传入的参数不同而实现的不同功能<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">.triangle(top,@width:20px,@color:#000)&#123;</span><br><span class="line">    border-color:transparent  transparent @color transparent ;</span><br><span class="line">&#125;</span><br><span class="line">.triangle(right,@width:20px,@color:#000)&#123;</span><br><span class="line">    border-color:transparent @color transparent  transparent ;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.triangle(bottom,@width:20px,@color:#000)&#123;</span><br><span class="line">    border-color:@color transparent  transparent  transparent ;</span><br><span class="line">&#125;</span><br><span class="line">.triangle(left,@width:20px,@color:#000)&#123;</span><br><span class="line">    border-color:transparent  transparent  transparent @color;</span><br><span class="line">&#125;</span><br><span class="line">.triangle(@_,@width:20px,@color:#000)&#123;</span><br><span class="line">    border-style: solid;</span><br><span class="line">    border-width: @width;</span><br><span class="line">&#125;</span><br><span class="line">#main&#123;</span><br><span class="line">    .triangle(left, 50px, #999)</span><br><span class="line">&#125;</span><br><span class="line">/* 生成的 CSS */</span><br><span class="line">#main&#123;</span><br><span class="line">  border-color:transparent  transparent  transparent #999;</span><br><span class="line">  border-style: solid;</span><br><span class="line">  border-width: 50px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="方法的命名空间"><a href="#方法的命名空间" class="headerlink" title="方法的命名空间"></a>方法的命名空间</h3><p>在 CSS 中&gt; 选择器，选择的是儿子元素，就是必须与父元素有直接血源的元素。 - 在引入命令空间时，如使用 &gt; 选择器，父元素不能加括号。 - 不得单独使用命名空间的方法必须先引入命名空间，才能使用其中方法。 - 子方法可以使用上一层传进来的方法。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">.div&#123;</span><br><span class="line">  background:red;</span><br><span class="line">  .size(@width)&#123;</span><br><span class="line">      width:@width;</span><br><span class="line">      height:200px;</span><br><span class="line">      border:1px solid #ccc;</span><br><span class="line">      .a(@height)&#123;</span><br><span class="line">          height:@height;</span><br><span class="line">          width:@width;</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">a&#123;</span><br><span class="line">    display: block;</span><br><span class="line">    .div&gt;.size(200px);</span><br><span class="line">    .a(200px);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="继承-扩展"><a href="#继承-扩展" class="headerlink" title="继承(扩展)"></a>继承(扩展)</h2><p>extend是less的一个伪类。它可以继承所匹配声明中的全部样式。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">.animation&#123;</span><br><span class="line">  transition: all .3s ease-out;</span><br><span class="line">  .hide&#123;</span><br><span class="line">    transform:scale(0);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">#main&#123;</span><br><span class="line">    &amp;:extend(.animation);</span><br><span class="line">&#125;</span><br><span class="line">#con&#123;</span><br><span class="line">    &amp;:extend(.animation .hide);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/* 生成后的 CSS */</span><br><span class="line">.animation,#main&#123;</span><br><span class="line">  transition: all .3s ease-out;</span><br><span class="line">&#125;</span><br><span class="line">.animation .hide , #con&#123;</span><br><span class="line">    transform:scale(0);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>all全局搜索替换<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">#main&#123;</span><br><span class="line">  width: 200px;</span><br><span class="line">&#125;</span><br><span class="line">#main &#123;</span><br><span class="line">  &amp;:after &#123;</span><br><span class="line">    content:&quot;Less is good!&quot;;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">#wrap:extend(#main all) &#123;&#125;</span><br><span class="line"></span><br><span class="line">/* 生成的 CSS */</span><br><span class="line">#main,#wrap&#123;</span><br><span class="line">  width: 200px;</span><br><span class="line">&#125;</span><br><span class="line">#main:after, #wrap:after &#123;</span><br><span class="line">    content: &quot;Less is good!&quot;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="导入"><a href="#导入" class="headerlink" title="导入"></a>导入</h2><p>导入less文件，可以省略后缀<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">import “index.less”;</span><br><span class="line">import “index”;</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/08/26/scss/" rel="next" title="CSS预处理器--SCSS篇">
+                <i class="fa fa-chevron-left"></i> CSS预处理器--SCSS篇
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC80MzAzMC8xOTU3Ng=="></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Huang Cheng">
+            
+              <p class="site-author-name" itemprop="name">Huang Cheng</p>
+              <p class="site-description motion-element" itemprop="description">一个平凡的web开发者，在自己喜欢的行业上一直努力，希望会遇到更多志同道合的朋友</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#LESS"><span class="nav-number">1.</span> <span class="nav-text">LESS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何在vue项目中使用less"><span class="nav-number">2.</span> <span class="nav-text">如何在vue项目中使用less</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#变量"><span class="nav-number">3.</span> <span class="nav-text">变量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#普通变量"><span class="nav-number">3.1.</span> <span class="nav-text">普通变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#选择器变量"><span class="nav-number">3.2.</span> <span class="nav-text">选择器变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性变量"><span class="nav-number">3.3.</span> <span class="nav-text">属性变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#url变量"><span class="nav-number">3.4.</span> <span class="nav-text">url变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#声明变量"><span class="nav-number">3.5.</span> <span class="nav-text">声明变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#变量运算"><span class="nav-number">3.6.</span> <span class="nav-text">变量运算</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用变量定义变量"><span class="nav-number">3.7.</span> <span class="nav-text">使用变量定义变量</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#嵌套"><span class="nav-number">4.</span> <span class="nav-text">嵌套</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#混合方法"><span class="nav-number">5.</span> <span class="nav-text">混合方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#具体参数方法"><span class="nav-number">5.1.</span> <span class="nav-text">具体参数方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#默认参数法"><span class="nav-number">5.2.</span> <span class="nav-text">默认参数法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#不定参"><span class="nav-number">5.3.</span> <span class="nav-text">不定参</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法的匹配模式"><span class="nav-number">5.4.</span> <span class="nav-text">方法的匹配模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法的命名空间"><span class="nav-number">5.5.</span> <span class="nav-text">方法的命名空间</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#继承-扩展"><span class="nav-number">6.</span> <span class="nav-text">继承(扩展)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#导入"><span class="nav-number">7.</span> <span class="nav-text">导入</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Huang Cheng</span>
+
+  
+</div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      访问数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人
+    </span>
+  
+
+  
+    <span class="site-pv">
+      总访问量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

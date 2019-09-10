@@ -295,6 +295,140 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/09/less/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Huang Cheng">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HC-FWI的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/09/09/less/" itemprop="url">CSS预处理器--LESS篇</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-09T20:01:03+08:00">
+                2019-09-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="LESS"><a href="#LESS" class="headerlink" title="LESS"></a>LESS</h2><p>Less 是一门 CSS 预处理语言，它扩充了 CSS 语言，增加了诸如变量、混合（mixin）、函数等功能，让 CSS 更易维护、方便制作主题、扩充。Less 可以运行在 Node、浏览器和 Rhino 平台上。网上有很多第三方工具帮助你编译 Less 源码。</p>
+<h2 id="如何在vue项目中使用less"><a href="#如何在vue项目中使用less" class="headerlink" title="如何在vue项目中使用less"></a>如何在vue项目中使用less</h2><p>1.安装less依赖：<br><code>npm install less less-loader --save</code><br>2.在build/webpack.base.conf.js文件中:<br>在module的rules添加如下配置：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  test: /\/less$/,</span><br><span class="line">  loader: &quot;style-loader!css-loader!less-loader&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>3.在style标签上添加lang属性，指定使用的样式语法:<br><code>&lt;style scoped lang=&quot;less&quot;&gt;&lt;/style&gt;</code><br>配置文成，这样就可以在vue项目中使用less啦。</p>
+<h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><h3 id="普通变量"><a href="#普通变量" class="headerlink" title="普通变量"></a>普通变量</h3><p>less 以@开头定义变量，并且使用时直接键入@名称。注意：作为属性值的变量不能添加大括号<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">@color:#333;</span><br><span class="line">.container&#123;</span><br><span class="line">  Background：@color；</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>注意：Less其变量只能定义一次，不能重复定义，否则后面的会类似与js的变量提升，覆盖前面的变量</p>
+<h3 id="选择器变量"><a href="#选择器变量" class="headerlink" title="选择器变量"></a>选择器变量</h3><p>选择器变量，让选择器变成一个动态的。作为选择器的变量在使用的时候需要添加大括号，变量的前面可以添加选择操作符。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">@mySelector: #wrap;</span><br><span class="line">@Wrap: wrap;</span><br><span class="line">@&#123;mySelector&#125;&#123; //变量名 必须使用大括号包裹</span><br><span class="line">  color: #999;</span><br><span class="line">  width: 50%;</span><br><span class="line">&#125;</span><br><span class="line">.@&#123;Wrap&#125;&#123;</span><br><span class="line">  color:#ccc;</span><br><span class="line">&#125;</span><br><span class="line">#@&#123;Wrap&#125;&#123;</span><br><span class="line">  color:#666;</span><br><span class="line">&#125;  </span><br><span class="line">/* 生成的 CSS */</span><br><span class="line">#wrap&#123;</span><br><span class="line">  color: #999;</span><br><span class="line">  width: 50%;</span><br><span class="line">&#125;</span><br><span class="line">.wrap&#123;</span><br><span class="line">  color:#ccc;</span><br><span class="line">&#125;</span><br><span class="line">#wrap&#123;</span><br><span class="line">  color:#666;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="属性变量"><a href="#属性变量" class="headerlink" title="属性变量"></a>属性变量</h3><p>可以在书写的时候少写很多内容，属性变量使用的时候也需要添加大括号<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">@borderStyle: border-style;</span><br><span class="line">@Soild:solid;</span><br><span class="line">#wrap&#123;</span><br><span class="line">  @&#123;borderStyle&#125;: @Soild;//变量名 必须使用大括号包裹</span><br><span class="line">&#125;</span><br><span class="line">/* 生成的 CSS */</span><br><span class="line">#wrap&#123;</span><br><span class="line">  border-style:solid;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="url变量"><a href="#url变量" class="headerlink" title="url变量"></a>url变量</h3><p>项目结构改变时，可以方便我们修改，目的是为了方便项目的维护<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">@images: &quot;../img&quot;;//需要加引号</span><br><span class="line">body &#123;</span><br><span class="line">  background: url(&quot;@&#123;images&#125;/dog.png&quot;);//变量名 必须使用大括号包裹</span><br><span class="line">&#125;</span><br><span class="line">/* 生成的 CSS */</span><br><span class="line">body &#123;</span><br><span class="line">  background: url(&quot;../img/dog.png&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="声明变量"><a href="#声明变量" class="headerlink" title="声明变量"></a>声明变量</h3><p>定义：@name：{<br>  Key：value；<br>  Key：value；<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">@background: &#123;background:red;&#125;;</span><br><span class="line">#main&#123;</span><br><span class="line">    @background();</span><br><span class="line">&#125;</span><br><span class="line">@Rules:&#123;</span><br><span class="line">    width: 200px;</span><br><span class="line">    height: 200px;</span><br><span class="line">    border: solid 1px red;</span><br><span class="line">&#125;;</span><br><span class="line">#con&#123;</span><br><span class="line">  @Rules();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/* 生成的 CSS */</span><br><span class="line">#main&#123;</span><br><span class="line">  background:red;</span><br><span class="line">&#125;</span><br><span class="line">#con&#123;</span><br><span class="line">  width: 200px;</span><br><span class="line">  height: 200px;</span><br><span class="line">  border: solid 1px red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/09/09/less/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/26/scss/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1434,138 +1568,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/19/ES6/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Huang Cheng">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="HC-FWI的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/03/19/ES6/" itemprop="url">ES6新特性</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-19T16:30:10+08:00">
-                2019-03-19
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="let-const-代替var-const来声明变量和常量"><a href="#let-const-代替var-const来声明变量和常量" class="headerlink" title="let/const: 代替var/const来声明变量和常量"></a>let/const: 代替var/const来声明变量和常量</h2><p>1.因为传统的var和const会被声明提前；<br>2.没有块级作用域: for  if   while都不是作用域，其中的变量会被提前到外<br>部，影响外部的代码。<br>使用后:<br>1.不会被提前，不允许提前使用未声明的变量；<br>2.让for if  while等程序块，也变为作用域原理: let自动添加匿名函数自调来<br>划分临时作用域，并将变量名前自动加_，与其他变量区分。</p>
-<h2 id="参数增强"><a href="#参数增强" class="headerlink" title="参数增强"></a>参数增强</h2><p>1.默认值(default): 即使用户不传入参数，参数也有备用的默认值代替<br>如何使用:定义函数时: function fun(形参,…,形参=默认值)；<br>注意:有默认值得参数，必须在形参列表的末尾。<br>2.剩余参数(rest): 代替arguments接收所有不确定个数的参数<br>使用arguments有两个问题:<br>1.不是数组类型，不能使用数组API<br>2.只能获得全部参数，无法有选择的获得部分<br>    如何: 定义函数时: function fun(形参,…, …数组名)<br>       其中: 数组可收集除前几个确定参数之外的剩余参数<br>3.散播(spread): 代替apply专门用于打散数组为单个元素，再传入函数。<br>apply的问题: 主要功能是替换this，顺便可以打散数组为单个值。<br>如何: 调用函数时: fun(…数组)<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/03/19/ES6/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </p></div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1613,7 +1620,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-count">21</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
