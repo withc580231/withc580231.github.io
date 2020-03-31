@@ -79,17 +79,18 @@
 
 
 
-<meta name="description" content="一个平凡的web开发者，在自己喜欢的行业上一直努力，希望会遇到更多志同道合的朋友">
+<meta name="description" content="响应式原理响应式原理核心基础的一块就是 Observer/Watcher/Dep, 简而言之就是，Vue 是如何拦截数据的读写， 如果实现对应的监听，并且特定的监听执行特定的回调或者渲染逻辑的。总的可以拆成三大块来说。这一块，主要说的是 Vue 是如何将一个 plain object 给处理成 reactive object 的，也就是，Vue 是如何拦截拦截对象的 get/set 的。我们知道，">
 <meta name="keywords" content="Fighting">
-<meta property="og:type" content="website">
-<meta property="og:title" content="HC-FWI的博客">
-<meta property="og:url" content="https://withc580231.github.io/archives/2019/page/2/index.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="手写VUE2.0实现数据响应">
+<meta property="og:url" content="https://withc580231.github.io/2020/03/31/vue2Resource/index.html">
 <meta property="og:site_name" content="HC-FWI的博客">
-<meta property="og:description" content="一个平凡的web开发者，在自己喜欢的行业上一直努力，希望会遇到更多志同道合的朋友">
+<meta property="og:description" content="响应式原理响应式原理核心基础的一块就是 Observer/Watcher/Dep, 简而言之就是，Vue 是如何拦截数据的读写， 如果实现对应的监听，并且特定的监听执行特定的回调或者渲染逻辑的。总的可以拆成三大块来说。这一块，主要说的是 Vue 是如何将一个 plain object 给处理成 reactive object 的，也就是，Vue 是如何拦截拦截对象的 get/set 的。我们知道，">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2020-03-31T13:22:32.560Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="HC-FWI的博客">
-<meta name="twitter:description" content="一个平凡的web开发者，在自己喜欢的行业上一直努力，希望会遇到更多志同道合的朋友">
+<meta name="twitter:title" content="手写VUE2.0实现数据响应">
+<meta name="twitter:description" content="响应式原理响应式原理核心基础的一块就是 Observer/Watcher/Dep, 简而言之就是，Vue 是如何拦截数据的读写， 如果实现对应的监听，并且特定的监听执行特定的回调或者渲染逻辑的。总的可以拆成三大块来说。这一块，主要说的是 Vue 是如何将一个 plain object 给处理成 reactive object 的，也就是，Vue 是如何拦截拦截对象的 get/set 的。我们知道，">
 
 
 
@@ -119,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="https://withc580231.github.io/archives/2019/page/2/">
+  <link rel="canonical" href="https://withc580231.github.io/2020/03/31/vue2Resource/">
 
 
 
 
 
-  <title>归档 | HC-FWI的博客</title>
+  <title>手写VUE2.0实现数据响应 | HC-FWI的博客</title>
   
 
 
@@ -144,7 +145,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -280,391 +281,157 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      <span class="archive-page-counter">
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://withc580231.github.io/2020/03/31/vue2Resource/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Huang Cheng">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HC-FWI的博客">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
+          <h1 class="post-title" itemprop="name headline">手写VUE2.0实现数据响应</h1>
         
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-31T21:07:03+08:00">
+                2020-03-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
           
-        
-        嗯..! 目前共计 25 篇日志。 继续努力。
-      </span>
 
-      
-
-        
-        
-        
-
-        
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2019">2019</h1>
-          </div>
-        
-        
+            
+          
 
-        
+          
+          
 
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i> 阅读数
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
 
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/03/20/clear/" itemprop="url">
-              
-                <span itemprop="name">如何解决浮动问题带来的影响</span>
-              
-            </a>
-        
-      </h2>
+          
+            <span class="post-meta-divider">|</span>
+            <span id="busuanzi_value_page_pv"></span>次阅读
+          
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-03-20T21:35:10+08:00" content="2019-03-20">
-          03-20
-        </time>
-      </div>
+          
 
-    </header>
-  </article>
+          
 
+        </div>
+      </header>
+    
 
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/03/19/ES6/" itemprop="url">
-              
-                <span itemprop="name">ES6新特性</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-03-19T16:30:10+08:00" content="2019-03-19">
-          03-19
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/03/17/css_center/" itemprop="url">
-              
-                <span itemprop="name">如何居中一个元素</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-03-17T18:39:00+08:00" content="2019-03-17">
-          03-17
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/03/16/JS/" itemprop="url">
-              
-                <span itemprop="name">JavaScript基础知识</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-03-16T10:01:38+08:00" content="2019-03-16">
-          03-16
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+      
+        <h2 id="响应式原理"><a href="#响应式原理" class="headerlink" title="响应式原理"></a>响应式原理</h2><p>响应式原理核心基础的一块就是 Observer/Watcher/Dep, 简而言之就是，Vue 是如何拦截数据的读写， 如果实现对应的监听，并且特定的监听执行特定的回调或者渲染逻辑的。总的可以拆成三大块来说。这一块，主要说的是 Vue 是如何将一个 plain object 给处理成 reactive object 的，也就是，Vue 是如何拦截拦截对象的 get/set 的。我们知道，用 Object.defineProperty 拦截数据的 get/set 是 vue 的核心逻辑之一。</p>
+<h3 id="创建observer劫持数据函数"><a href="#创建observer劫持数据函数" class="headerlink" title="创建observer劫持数据函数"></a>创建observer劫持数据函数</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">function observer (data) &#123;</span><br><span class="line">  // 如果传进来的数据是一个对象或者空，直接返回</span><br><span class="line">  if (typeof data !== &apos;object&apos; || data === null) &#123;</span><br><span class="line">    return data</span><br><span class="line">  &#125;</span><br><span class="line">  // 遍历data</span><br><span class="line">  for (var key in data) &#123;</span><br><span class="line">    // 监听数据data</span><br><span class="line">    defineReactive(data, key, data[key])</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<h3 id="创建defineReactive数据监听函数"><a href="#创建defineReactive数据监听函数" class="headerlink" title="创建defineReactive数据监听函数"></a>创建defineReactive数据监听函数</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">function defineReactive (target, key, value) &#123;</span><br><span class="line">  // 如果value是一个对象，则让其回到observer函数</span><br><span class="line">  observer(value)</span><br><span class="line">  Object.defineProperty(target, key, &#123;</span><br><span class="line">    get () &#123;</span><br><span class="line">      return value</span><br><span class="line">    &#125;,</span><br><span class="line">    set (newValue) &#123;</span><br><span class="line">      if (newValue !== value) &#123;</span><br><span class="line">        observer(newValue) // 如果连续修改 并且第二次为对象时</span><br><span class="line">        value = newValue</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>那么问题来了，如果劫持到的是一个数组，那么无法监听，因此需要做出以下调整<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">let oldArrayPrototype = Array.prototype</span><br><span class="line">let proto = Object.create(oldArrayPrototype)</span><br><span class="line">[&apos;push&apos;, &apos;shift&apos;, &apos;unshift&apos;].forEach((method)=&gt;&#123;</span><br><span class="line">  proto[method] = function () &#123;</span><br><span class="line">    update()</span><br><span class="line">    oldArrayPrototype[method].call(this, ...arguments)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>来一个完整版的<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">let oldArrayPrototype = Array.prototype</span><br><span class="line">let proto = Object.create(oldArrayPrototype)</span><br><span class="line">[&apos;push&apos;, &apos;shift&apos;, &apos;unshift&apos;].forEach(method =&gt;&#123;</span><br><span class="line">  proto[method] = function () &#123;</span><br><span class="line">    update()</span><br><span class="line">    oldArrayPrototype[method].call(this, ...arguments)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">function observer (data) &#123;</span><br><span class="line">  if (typeof data !== &apos;object&apos; || data === null) &#123;</span><br><span class="line">    return data</span><br><span class="line">  &#125;</span><br><span class="line">  for (var key in data) &#123;</span><br><span class="line">    defineReactive(data, key, data[key])</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">function defineReactive (target, key, value) &#123;</span><br><span class="line">  observer(value)</span><br><span class="line">  Object.defineProperty(target, key, &#123;</span><br><span class="line">    get () &#123;</span><br><span class="line">      return value</span><br><span class="line">    &#125;,</span><br><span class="line">    set (newValue) &#123;</span><br><span class="line">      if (newValue !== value) &#123;</span><br><span class="line">        observer(newValue) // 如果连续修改 并且第二次为对象时</span><br><span class="line">        update()</span><br><span class="line">        value = newValue</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br><span class="line">let data = &#123;</span><br><span class="line">  name: &apos;hello&apos;</span><br><span class="line">&#125;</span><br><span class="line">function update () &#123;</span><br><span class="line">  console.log(&apos;更新数据&apos;)</span><br><span class="line">&#125;</span><br><span class="line">observer(data)</span><br><span class="line">data.name = &#123; n: &apos;12&apos; &#125;</span><br><span class="line">data.name.n = 1</span><br></pre></td></tr></table></figure></p>
+<p>大功告成，这样就完成了数据的响应式了。</p>
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/03/10/new/" itemprop="url">
-              
-                <span itemprop="name">JavaScript中new都做了哪些事儿</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-03-10T11:21:49+08:00" content="2019-03-10">
-          03-10
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/03/08/Protocol/" itemprop="url">
-              
-                <span itemprop="name">浏览器访问服务器的过程中丢包了，但返回的status为200。原因是什么</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-03-08T14:13:37+08:00" content="2019-03-08">
-          03-08
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/03/07/promise/" itemprop="url">
-              
-                <span itemprop="name">对promise的理解</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-03-07T14:08:29+08:00" content="2019-03-07">
-          03-07
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/03/07/ACAO/" itemprop="url">
-              
-                <span itemprop="name">跨域的解决方法</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-03-07T10:00:59+08:00" content="2019-03-07">
-          03-07
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/03/06/json/" itemprop="url">
-              
-                <span itemprop="name">json数据</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-03-06T17:58:48+08:00" content="2019-03-06">
-          03-06
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/03/06/ajax/" itemprop="url">
-              
-                <span itemprop="name">JavaScript中的ajax</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-03-06T16:58:28+08:00" content="2019-03-06">
-          03-06
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
     </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/02/18/debounce_throttle/" rel="next" title="防抖与节流">
+                <i class="fa fa-chevron-left"></i> 防抖与节流
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
-
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/archives/2019/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/archives/2019/">1</a><span class="page-number current">2</span><a class="page-number" href="/archives/2019/page/3/">3</a><a class="extend next" rel="next" href="/archives/2019/page/3/"><i class="fa fa-angle-right"></i></a>
-  </nav>
+  </article>
 
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -672,6 +439,15 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC80MzAzMC8xOTU3Ng=="></div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -692,8 +468,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -737,6 +522,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#响应式原理"><span class="nav-number">1.</span> <span class="nav-text">响应式原理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建observer劫持数据函数"><span class="nav-number">1.1.</span> <span class="nav-text">创建observer劫持数据函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建defineReactive数据监听函数"><span class="nav-number">1.2.</span> <span class="nav-text">创建defineReactive数据监听函数</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -884,6 +685,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
@@ -912,6 +717,17 @@
 
 
 
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
   
 
 
