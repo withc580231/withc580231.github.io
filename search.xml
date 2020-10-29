@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[uniapp踩坑之textarea层级问题]]></title>
+    <url>%2F2020%2F10%2F29%2Funiapp_textarea%2F</url>
+    <content type="text"><![CDATA[问题在开发小程序中，不管是使用原生开发还是使用uniapp、kbone等框架开发，都会遇到一个问题，那就是textarea标签层级过高问题，即使你设置了该标签的层级z-index为最低也无法解决。 ##解决方法 ###方法一当涉及到使用弹出层时，可以当弹出层弹出时，隐藏该textarea标签，即控制该标签的display:none属性1&lt;textarea value=&quot;&quot; v-show=&quot;true || false&quot; placeholder=&quot;&quot; /&gt; 考虑用v-show而不用v-if，是因为v-show只是暂时隐藏掉该文本域，而v-if是销毁掉它（隐藏内容还存在，销毁的话内容不存在） ###方法二为了解决原生组件层级最高的限制。小程序专门提供了 cover-view 和 cover-image 组件，可以覆盖在部分原生组件上面。这两个组件也是原生组件，但是使用限制与其他原生组件有所不同。将定位标签 改为 cover-view标签。但要注意一点就是cover-view不能嵌套cover-image 或者 组件。]]></content>
+  </entry>
+  <entry>
     <title><![CDATA[简单拖拽功能]]></title>
     <url>%2F2020%2F09%2F13%2Ftrag%2F</url>
     <content type="text"><![CDATA[实现步骤定义一个容器定义一个可被拖拽的容器，id为drag。1&lt;div id=&quot;drag&quot;&gt;&lt;/div&gt; 给容器定义一个简单的样式123456#drag&#123; width: 100px; height: 100px; background: #f00; position: absolute;&#125; 获取被拖拽元素,绑定鼠标点下事件获取获取被拖拽元素,绑定鼠标点下事件，并给获取到的元素一个识别背景色1234var t1 = document.getElementById(&apos;drag&apos;) t1.onmousedown = function (event) &#123; t1.style.background = &apos;#ff0&apos; &#125; 给被拖拽元素绑定鼠标移动事件12345document.onmousemove = function (event) &#123; var event = event || window.event t1.style.left = event.clientX + &apos;px&apos; t1.style.top = event.clientY + &apos;px&apos;&#125; 给被拖拽元素绑定鼠标放开事件给被拖拽元素绑定鼠标松开事件,并清除鼠标移动以及鼠标放开事件，并使背景色回到初始背景色12345t1.onmouseup = function () &#123; t1.style.background = &apos;#f00&apos; document.onmousemove = null t1.onmouseup = null &#125; 以上基本的拖拽功能就实现了，但是存在一个问题就是当点击拖拽使，被拖拽元素永远是从左上角开始的，一下代码就是被优化后的总代码1234567891011121314151617var t1 = document.getElementById(&apos;trag&apos;) t1.onmousedown = function (event) &#123; var event = event || window.event var left = event.offsetX var top = event.offsetY t1.style.background = &apos;#ff0&apos; document.onmousemove = function (event) &#123; var event = event || window.event t1.style.left = event.clientX - left + &apos;px&apos; t1.style.top = event.clientY - top + &apos;px&apos; t1.onmouseup = function () &#123; t1.style.background = &apos;#f00&apos; document.onmousemove = null t1.onmouseup = null &#125; &#125; &#125; 好啦，一个简单的拖拽功能就完成了。]]></content>
