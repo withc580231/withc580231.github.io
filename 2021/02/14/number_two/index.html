@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="let/const: 代替var/const来声明变量和常量1.因为传统的var和const会被声明提前；2.没有块级作用域: for  if   while都不是作用域，其中的变量会被提前到外部，影响外部的代码。使用后:1.不会被提前，不允许提前使用未声明的变量；2.让for if  while等程序块，也变为作用域原理: let自动添加匿名函数自调来划分临时作用域，并将变量名前自动加_，与其他">
+<meta name="description" content="合并两个有序链表（简单）将两个升序链表合并为一个新的 升序 链表并返回。新链表是通过拼接给定的两个链表的所有节点组成的。12345678910111213示例 1：输入：l1 = [1,2,4], l2 = [1,3,4]输出：[1,1,2,3,4,4]示例 2：输入：l1 = [], l2 = []输出：[]示例 3：输入：l1 = [], l2 = [0]输出：[0]提示：两个链表的节点数目范">
 <meta name="keywords" content="Fighting">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ES6新特性">
-<meta property="og:url" content="https://withc580231.github.io/2019/03/19/ES6/index.html">
+<meta property="og:title" content="算法-每日一题">
+<meta property="og:url" content="https://withc580231.github.io/2021/02/14/number_two/index.html">
 <meta property="og:site_name" content="HC-FWI的博客">
-<meta property="og:description" content="let/const: 代替var/const来声明变量和常量1.因为传统的var和const会被声明提前；2.没有块级作用域: for  if   while都不是作用域，其中的变量会被提前到外部，影响外部的代码。使用后:1.不会被提前，不允许提前使用未声明的变量；2.让for if  while等程序块，也变为作用域原理: let自动添加匿名函数自调来划分临时作用域，并将变量名前自动加_，与其他">
+<meta property="og:description" content="合并两个有序链表（简单）将两个升序链表合并为一个新的 升序 链表并返回。新链表是通过拼接给定的两个链表的所有节点组成的。12345678910111213示例 1：输入：l1 = [1,2,4], l2 = [1,3,4]输出：[1,1,2,3,4,4]示例 2：输入：l1 = [], l2 = []输出：[]示例 3：输入：l1 = [], l2 = [0]输出：[0]提示：两个链表的节点数目范">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-19T09:18:35.489Z">
+<meta property="og:updated_time" content="2021-02-14T10:17:03.485Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ES6新特性">
-<meta name="twitter:description" content="let/const: 代替var/const来声明变量和常量1.因为传统的var和const会被声明提前；2.没有块级作用域: for  if   while都不是作用域，其中的变量会被提前到外部，影响外部的代码。使用后:1.不会被提前，不允许提前使用未声明的变量；2.让for if  while等程序块，也变为作用域原理: let自动添加匿名函数自调来划分临时作用域，并将变量名前自动加_，与其他">
+<meta name="twitter:title" content="算法-每日一题">
+<meta name="twitter:description" content="合并两个有序链表（简单）将两个升序链表合并为一个新的 升序 链表并返回。新链表是通过拼接给定的两个链表的所有节点组成的。12345678910111213示例 1：输入：l1 = [1,2,4], l2 = [1,3,4]输出：[1,1,2,3,4,4]示例 2：输入：l1 = [], l2 = []输出：[]示例 3：输入：l1 = [], l2 = [0]输出：[0]提示：两个链表的节点数目范">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="https://withc580231.github.io/2019/03/19/ES6/">
+  <link rel="canonical" href="https://withc580231.github.io/2021/02/14/number_two/">
 
 
 
 
 
-  <title>ES6新特性 | HC-FWI的博客</title>
+  <title>算法-每日一题 | HC-FWI的博客</title>
   
 
 
@@ -295,7 +295,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://withc580231.github.io/2019/03/19/ES6/">
+    <link itemprop="mainEntityOfPage" href="https://withc580231.github.io/2021/02/14/number_two/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Huang Cheng">
@@ -312,7 +312,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">ES6新特性</h1>
+          <h1 class="post-title" itemprop="name headline">算法-每日一题</h1>
         
 
         <div class="post-meta">
@@ -324,8 +324,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-19T16:30:10+08:00">
-                2019-03-19
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-02-14T18:02:50+08:00">
+                2021-02-14
               </time>
             
 
@@ -372,12 +372,9 @@
       
 
       
-        <h2 id="let-const-代替var-const来声明变量和常量"><a href="#let-const-代替var-const来声明变量和常量" class="headerlink" title="let/const: 代替var/const来声明变量和常量"></a>let/const: 代替var/const来声明变量和常量</h2><p>1.因为传统的var和const会被声明提前；<br>2.没有块级作用域: for  if   while都不是作用域，其中的变量会被提前到外<br>部，影响外部的代码。<br>使用后:<br>1.不会被提前，不允许提前使用未声明的变量；<br>2.让for if  while等程序块，也变为作用域原理: let自动添加匿名函数自调来<br>划分临时作用域，并将变量名前自动加_，与其他变量区分。</p>
-<h2 id="参数增强"><a href="#参数增强" class="headerlink" title="参数增强"></a>参数增强</h2><p>1.默认值(default): 即使用户不传入参数，参数也有备用的默认值代替<br>如何使用:定义函数时: function fun(形参,…,形参=默认值)；<br>注意:有默认值得参数，必须在形参列表的末尾。<br>2.剩余参数(rest): 代替arguments接收所有不确定个数的参数<br>使用arguments有两个问题:<br>1.不是数组类型，不能使用数组API<br>2.只能获得全部参数，无法有选择的获得部分<br>    如何: 定义函数时: function fun(形参,…, …数组名)<br>       其中: 数组可收集除前几个确定参数之外的剩余参数<br>3.散播(spread): 代替apply专门用于打散数组为单个元素，再传入函数。<br>apply的问题: 主要功能是替换this，顺便可以打散数组为单个值。<br>如何: 调用函数时: fun(…数组)<br><a id="more"></a></p>
-<h2 id="箭头函数-对一切回调函数或匿名函数自调的简写"><a href="#箭头函数-对一切回调函数或匿名函数自调的简写" class="headerlink" title="箭头函数: 对一切回调函数或匿名函数自调的简写"></a>箭头函数: 对一切回调函数或匿名函数自调的简写</h2><p>如何使用: 回调函数: function (形参,…){ … }；<br>    可简化为: (形参,…)=&gt;{ … }；<br>    如果只有一个形参，可省略()；<br>    如果函数体中只有一句话，可省略{}；<br>    如果这仅有的一句话还是return xxx，则必须省略return。<br>特点: 箭头函数内外的this是同一个/共通的。<br>注意: 如果希望内外this相同时，应该简化；如果反而希望内外this不同时，不能简化。</p>
-<h2 id="参数解构-从一个大的对象中抽取想要的部分成员，单独使用"><a href="#参数解构-从一个大的对象中抽取想要的部分成员，单独使用" class="headerlink" title="参数解构: 从一个大的对象中抽取想要的部分成员，单独使用"></a>参数解构: 从一个大的对象中抽取想要的部分成员，单独使用</h2><p>1.数组解构: 从数组中抽取想要的元素出来，单独使用<br>如何使用: 下标对下标:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var arr=[1,2,3];</span><br><span class="line">var [x,y,z]=arr;</span><br><span class="line">console.log(x,y,z); //x=1, y=2, z=3</span><br></pre></td></tr></table></figure></p>
-<p>2.对象解构: 从对象中抽取想要的成员出来，单独使用<br>如何使用: 属性名对属性名<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var obj=&#123;x:1, y:2, z:3&#125;;</span><br><span class="line">var &#123;x,y,z&#125;=obj; //x属性值为1、y属性值为2、z属性值为3</span><br></pre></td></tr></table></figure></p>
-<h2 id="Promise-代替回调函数，实现多个异步调用，顺序执行"><a href="#Promise-代替回调函数，实现多个异步调用，顺序执行" class="headerlink" title="Promise: 代替回调函数，实现多个异步调用，顺序执行"></a>Promise: 代替回调函数，实现多个异步调用，顺序执行</h2><p>问题: 使用回调函数方式实现多个异步调用顺序执行会导致回调地狱(callback hell)<br>根源: 所有回调函数规定，在调用函数前，就要提前传入到函数中<br>解决: 让回调函数在函数后传入<br>如何: 前提: 不要在参数列表里传递回调函数了！<br>具体实现方案前面有提到，可点击此处查看<a href="2019/03/07/promise">promise总结篇</a>。</p>
+        <h2 id="合并两个有序链表（简单）"><a href="#合并两个有序链表（简单）" class="headerlink" title="合并两个有序链表（简单）"></a>合并两个有序链表（简单）</h2><p>将两个升序链表合并为一个新的 升序 链表并返回。新链表是通过拼接给定的两个链表的所有节点组成的。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">示例 1：</span><br><span class="line">输入：l1 = [1,2,4], l2 = [1,3,4]</span><br><span class="line">输出：[1,1,2,3,4,4]</span><br><span class="line">示例 2：</span><br><span class="line">输入：l1 = [], l2 = []</span><br><span class="line">输出：[]</span><br><span class="line">示例 3：</span><br><span class="line">输入：l1 = [], l2 = [0]</span><br><span class="line">输出：[0]</span><br><span class="line">提示：</span><br><span class="line">两个链表的节点数目范围是 [0, 50]</span><br><span class="line">-100 &lt;= Node.val &lt;= 100</span><br><span class="line">l1 和 l2 均按 非递减顺序 排列</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * Definition for singly-linked list.</span><br><span class="line"> * function ListNode(val, next) &#123;</span><br><span class="line"> *     this.val = (val===undefined ? 0 : val)</span><br><span class="line"> *     this.next = (next===undefined ? null : next)</span><br><span class="line"> * &#125;</span><br><span class="line"> */</span><br><span class="line">/**</span><br><span class="line"> * @param &#123;ListNode&#125; l1</span><br><span class="line"> * @param &#123;ListNode&#125; l2</span><br><span class="line"> * @return &#123;ListNode&#125;</span><br><span class="line"> */</span><br><span class="line">var mergeTwoLists = function(l1, l2) &#123;</span><br><span class="line">    if (l1===null) &#123;</span><br><span class="line">        return l2</span><br><span class="line">    &#125; else if (l2===null) &#123;</span><br><span class="line">        return l1</span><br><span class="line">    &#125; else if (l1.val&lt;l2.val) &#123;</span><br><span class="line">        l1.next = mergeTwoLists(l1.next,l2)</span><br><span class="line">        return l1</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        l2.next = mergeTwoLists(l1,l2.next)</span><br><span class="line">        return l2</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>我的思路：使用递归，如果l1节点为null，返回l2，反之返回l1；在有节点值的情况下，如果l1节点值小于l2的节点值，那么将l1的下一个节点和l2的节点再次递归，并返回l1，l2同理。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">执行用时：92 ms, 在所有 JavaScript 提交中击败了73.65%的用户</span><br><span class="line">内存消耗：39.4 MB, 在所有 JavaScript 提交中击败了52.94%的用户</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -402,8 +399,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/03/17/css_center/" rel="next" title="如何居中一个元素">
-                <i class="fa fa-chevron-left"></i> 如何居中一个元素
+              <a href="/2021/01/30/number_one/" rel="next" title="算法-每日一题">
+                <i class="fa fa-chevron-left"></i> 算法-每日一题
               </a>
             
           </div>
@@ -411,10 +408,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/03/20/clear/" rel="prev" title="如何解决浮动问题带来的影响">
-                如何解决浮动问题带来的影响 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -535,7 +528,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#let-const-代替var-const来声明变量和常量"><span class="nav-number">1.</span> <span class="nav-text">let/const: 代替var/const来声明变量和常量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参数增强"><span class="nav-number">2.</span> <span class="nav-text">参数增强</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#箭头函数-对一切回调函数或匿名函数自调的简写"><span class="nav-number">3.</span> <span class="nav-text">箭头函数: 对一切回调函数或匿名函数自调的简写</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参数解构-从一个大的对象中抽取想要的部分成员，单独使用"><span class="nav-number">4.</span> <span class="nav-text">参数解构: 从一个大的对象中抽取想要的部分成员，单独使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Promise-代替回调函数，实现多个异步调用，顺序执行"><span class="nav-number">5.</span> <span class="nav-text">Promise: 代替回调函数，实现多个异步调用，顺序执行</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#合并两个有序链表（简单）"><span class="nav-number">1.</span> <span class="nav-text">合并两个有序链表（简单）</span></a></li></ol></div>
             
 
           </div>
