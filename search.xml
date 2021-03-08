@@ -2,6 +2,11 @@
 <search>
   <entry>
     <title><![CDATA[算法-每日一题]]></title>
+    <url>%2F2021%2F03%2F08%2Fnumber_four%2F</url>
+    <content type="text"><![CDATA[相同的树（简单）给你两棵二叉树的根节点 p 和 q ，编写一个函数来检验这两棵树是否相同。如果两个树在结构上相同，并且节点具有相同的值，则认为它们是相同的。123456789101112示例 1：输入：p = [1,2,3], q = [1,2,3]输出：true示例 2：输入：p = [1,2], q = [1,null,2]输出：false示例 3：输入：p = [1,2,1], q = [1,1,2]输出：false提示：两棵树上的节点数目都在范围 [0, 100] 内；-104 &lt;= Node.val &lt;= 104。 12345678910111213141516171819202122232425/** * Definition for a binary tree node. * function TreeNode(val, left, right) &#123; * this.val = (val===undefined ? 0 : val) * this.left = (left===undefined ? null : left) * this.right = (right===undefined ? null : right) * &#125; *//** * @param &#123;TreeNode&#125; p * @param &#123;TreeNode&#125; q * @return &#123;boolean&#125; */var isSameTree = function(p, q) &#123; if (q===null&amp;&amp;p===null) &#123; return true &#125; if (q===null||p===null) &#123; return false &#125; if (q.val!==p.val) &#123; return false &#125; return isSameTree(p.left,q.left)&amp;&amp;isSameTree(q.right,p.right)&#125;; 我的思路：当且仅当两个树完全一致才能返回true，其余皆返回false。12执行用时：84 ms, 在所有 JavaScript 提交中击败了65.17%的用户内存消耗：38.8 MB, 在所有 JavaScript 提交中击败了81.08%的用户]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[算法-每日一题]]></title>
     <url>%2F2021%2F02%2F19%2Fnumber_three%2F</url>
     <content type="text"><![CDATA[回文数（简单）给你一个整数 x ，如果 x 是一个回文整数，返回 true ；否则，返回 false 。回文数是指正序（从左向右）和倒序（从右向左）读都是一样的整数。例如，121 是回文，而 123 不是。12345678910111213141516示例 1：输入：x = 121输出：true示例 2：输入：x = -121输出：false解释：从左向右读, 为 -121 。 从右向左读, 为 121- 。因此它不是一个回文数。示例 3：输入：x = 10输出：false解释：从右向左读, 为 01 。因此它不是一个回文数。示例 4：输入：x = -101输出：false提示：-231 &lt;= x &lt;= 231 - 1 1234567891011121314/** * @param &#123;number&#125; x * @return &#123;boolean&#125; */var isPalindrome = function(x) &#123; let y = String(x).split(&apos;&apos;) let r = y.reverse() let re = r.join(&apos;&apos;) if (Number(x) === Number(re)) &#123; return true &#125; else &#123; return false &#125;&#125;; 我的思路：将其通过String(x).split(‘’)转为数组，使用数组方法reverse翻转后，使用join方法转为字符串，和原字符串作比较，相同为true，反之为false12执行用时：220 ms, 在所有 JavaScript 提交中击败了58.44%的用户内存消耗：46.9 MB, 在所有 JavaScript 提交中击败了41.91%的用户]]></content>
   </entry>

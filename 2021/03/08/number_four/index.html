@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="回文数（简单）给你一个整数 x ，如果 x 是一个回文整数，返回 true ；否则，返回 false 。回文数是指正序（从左向右）和倒序（从右向左）读都是一样的整数。例如，121 是回文，而 123 不是。12345678910111213141516示例 1：输入：x = 121输出：true示例 2：输入：x = -121输出：false解释：从左向右读, 为 -121 。 从右向左读, 为">
+<meta name="description" content="相同的树（简单）给你两棵二叉树的根节点 p 和 q ，编写一个函数来检验这两棵树是否相同。如果两个树在结构上相同，并且节点具有相同的值，则认为它们是相同的。123456789101112示例 1：输入：p = [1,2,3], q = [1,2,3]输出：true示例 2：输入：p = [1,2], q = [1,null,2]输出：false示例 3：输入：p = [1,2,1], q = [1">
 <meta name="keywords" content="Fighting">
 <meta property="og:type" content="article">
 <meta property="og:title" content="算法-每日一题">
-<meta property="og:url" content="https://withc580231.github.io/2021/02/19/number_three/index.html">
+<meta property="og:url" content="https://withc580231.github.io/2021/03/08/number_four/index.html">
 <meta property="og:site_name" content="HC-FWI的博客">
-<meta property="og:description" content="回文数（简单）给你一个整数 x ，如果 x 是一个回文整数，返回 true ；否则，返回 false 。回文数是指正序（从左向右）和倒序（从右向左）读都是一样的整数。例如，121 是回文，而 123 不是。12345678910111213141516示例 1：输入：x = 121输出：true示例 2：输入：x = -121输出：false解释：从左向右读, 为 -121 。 从右向左读, 为">
+<meta property="og:description" content="相同的树（简单）给你两棵二叉树的根节点 p 和 q ，编写一个函数来检验这两棵树是否相同。如果两个树在结构上相同，并且节点具有相同的值，则认为它们是相同的。123456789101112示例 1：输入：p = [1,2,3], q = [1,2,3]输出：true示例 2：输入：p = [1,2], q = [1,null,2]输出：false示例 3：输入：p = [1,2,1], q = [1">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2021-02-19T11:35:09.821Z">
+<meta property="og:updated_time" content="2021-03-08T12:20:17.091Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="算法-每日一题">
-<meta name="twitter:description" content="回文数（简单）给你一个整数 x ，如果 x 是一个回文整数，返回 true ；否则，返回 false 。回文数是指正序（从左向右）和倒序（从右向左）读都是一样的整数。例如，121 是回文，而 123 不是。12345678910111213141516示例 1：输入：x = 121输出：true示例 2：输入：x = -121输出：false解释：从左向右读, 为 -121 。 从右向左读, 为">
+<meta name="twitter:description" content="相同的树（简单）给你两棵二叉树的根节点 p 和 q ，编写一个函数来检验这两棵树是否相同。如果两个树在结构上相同，并且节点具有相同的值，则认为它们是相同的。123456789101112示例 1：输入：p = [1,2,3], q = [1,2,3]输出：true示例 2：输入：p = [1,2], q = [1,null,2]输出：false示例 3：输入：p = [1,2,1], q = [1">
 
 
 
@@ -120,7 +120,7 @@
 
 
 
-  <link rel="canonical" href="https://withc580231.github.io/2021/02/19/number_three/">
+  <link rel="canonical" href="https://withc580231.github.io/2021/03/08/number_four/">
 
 
 
@@ -295,7 +295,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://withc580231.github.io/2021/02/19/number_three/">
+    <link itemprop="mainEntityOfPage" href="https://withc580231.github.io/2021/03/08/number_four/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Huang Cheng">
@@ -324,8 +324,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-02-19T19:28:57+08:00">
-                2021-02-19
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-03-08T20:17:15+08:00">
+                2021-03-08
               </time>
             
 
@@ -372,9 +372,9 @@
       
 
       
-        <h2 id="回文数（简单）"><a href="#回文数（简单）" class="headerlink" title="回文数（简单）"></a>回文数（简单）</h2><p>给你一个整数 x ，如果 x 是一个回文整数，返回 true ；否则，返回 false 。<br>回文数是指正序（从左向右）和倒序（从右向左）读都是一样的整数。例如，121 是回文，而 123 不是。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">示例 1：</span><br><span class="line">输入：x = 121</span><br><span class="line">输出：true</span><br><span class="line">示例 2：</span><br><span class="line">输入：x = -121</span><br><span class="line">输出：false</span><br><span class="line">解释：从左向右读, 为 -121 。 从右向左读, 为 121- 。因此它不是一个回文数。</span><br><span class="line">示例 3：</span><br><span class="line">输入：x = 10</span><br><span class="line">输出：false</span><br><span class="line">解释：从右向左读, 为 01 。因此它不是一个回文数。</span><br><span class="line">示例 4：</span><br><span class="line">输入：x = -101</span><br><span class="line">输出：false</span><br><span class="line">提示：</span><br><span class="line">-231 &lt;= x &lt;= 231 - 1</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * @param &#123;number&#125; x</span><br><span class="line"> * @return &#123;boolean&#125;</span><br><span class="line"> */</span><br><span class="line">var isPalindrome = function(x) &#123;</span><br><span class="line">    let y = String(x).split(&apos;&apos;)</span><br><span class="line">    let r = y.reverse()</span><br><span class="line">    let re = r.join(&apos;&apos;)</span><br><span class="line">    if (Number(x) === Number(re)) &#123;</span><br><span class="line">        return true</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        return false</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p>我的思路：将其通过String(x).split(‘’)转为数组，使用数组方法reverse翻转后，使用join方法转为字符串，和原字符串作比较，相同为true，反之为false<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">执行用时：220 ms, 在所有 JavaScript 提交中击败了58.44%的用户</span><br><span class="line">内存消耗：46.9 MB, 在所有 JavaScript 提交中击败了41.91%的用户</span><br></pre></td></tr></table></figure></p>
+        <h2 id="相同的树（简单）"><a href="#相同的树（简单）" class="headerlink" title="相同的树（简单）"></a>相同的树（简单）</h2><p>给你两棵二叉树的根节点 p 和 q ，编写一个函数来检验这两棵树是否相同。<br>如果两个树在结构上相同，并且节点具有相同的值，则认为它们是相同的。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">示例 1：</span><br><span class="line">输入：p = [1,2,3], q = [1,2,3]</span><br><span class="line">输出：true</span><br><span class="line">示例 2：</span><br><span class="line">输入：p = [1,2], q = [1,null,2]</span><br><span class="line">输出：false</span><br><span class="line">示例 3：</span><br><span class="line">输入：p = [1,2,1], q = [1,1,2]</span><br><span class="line">输出：false</span><br><span class="line">提示：</span><br><span class="line">两棵树上的节点数目都在范围 [0, 100] 内；</span><br><span class="line">-104 &lt;= Node.val &lt;= 104。</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * Definition for a binary tree node.</span><br><span class="line"> * function TreeNode(val, left, right) &#123;</span><br><span class="line"> *     this.val = (val===undefined ? 0 : val)</span><br><span class="line"> *     this.left = (left===undefined ? null : left)</span><br><span class="line"> *     this.right = (right===undefined ? null : right)</span><br><span class="line"> * &#125;</span><br><span class="line"> */</span><br><span class="line">/**</span><br><span class="line"> * @param &#123;TreeNode&#125; p</span><br><span class="line"> * @param &#123;TreeNode&#125; q</span><br><span class="line"> * @return &#123;boolean&#125;</span><br><span class="line"> */</span><br><span class="line">var isSameTree = function(p, q) &#123;</span><br><span class="line">    if (q===null&amp;&amp;p===null) &#123;</span><br><span class="line">        return true</span><br><span class="line">    &#125;</span><br><span class="line">    if (q===null||p===null) &#123;</span><br><span class="line">        return false</span><br><span class="line">    &#125;</span><br><span class="line">    if (q.val!==p.val) &#123;</span><br><span class="line">        return false</span><br><span class="line">    &#125;</span><br><span class="line">    return isSameTree(p.left,q.left)&amp;&amp;isSameTree(q.right,p.right)</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>我的思路：当且仅当两个树完全一致才能返回true，其余皆返回false。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">执行用时：84 ms, 在所有 JavaScript 提交中击败了65.17%的用户</span><br><span class="line">内存消耗：38.8 MB, 在所有 JavaScript 提交中击败了81.08%的用户</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -399,7 +399,7 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2021/02/14/number_two/" rel="next" title="算法-每日一题">
+              <a href="/2021/02/19/number_three/" rel="next" title="算法-每日一题">
                 <i class="fa fa-chevron-left"></i> 算法-每日一题
               </a>
             
@@ -408,10 +408,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2021/03/08/number_four/" rel="prev" title="算法-每日一题">
-                算法-每日一题 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -532,7 +528,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#回文数（简单）"><span class="nav-number">1.</span> <span class="nav-text">回文数（简单）</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#相同的树（简单）"><span class="nav-number">1.</span> <span class="nav-text">相同的树（简单）</span></a></li></ol></div>
             
 
           </div>
