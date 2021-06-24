@@ -295,6 +295,135 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://withc580231.github.io/2020/06/15/uniapp/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Huang Cheng">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HC-FWI的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/06/15/uniapp/" itemprop="url">uniapp学习篇（ps:花了两个月的时间边做项目边学习）</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-06-15T20:09:55+08:00">
+                2020-06-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="配置相关"><a href="#配置相关" class="headerlink" title="配置相关"></a>配置相关</h2><h3 id="pages-json文件"><a href="#pages-json文件" class="headerlink" title="pages.json文件"></a>pages.json文件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&quot;globalStyle&quot;: &#123;</span><br><span class="line">	&quot;navigationBarTextStyle&quot;: &quot;white&quot;,  // 仅支持black和white</span><br><span class="line">	&quot;navigationBarTitleText&quot;: &quot;uni-app&quot;, // 标题</span><br><span class="line">	&quot;navigationBarBackgroundColor&quot;: &quot;#007AFF&quot;, // 导航栏背景色</span><br><span class="line">	&quot;backgroundColor&quot;: &quot;#FFFFFF&quot; // 页面背景色</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="配置页面路由，也可在相对应的页面中配置标题颜色，背景色，是否启用下拉刷新等等"><a href="#配置页面路由，也可在相对应的页面中配置标题颜色，背景色，是否启用下拉刷新等等" class="headerlink" title="配置页面路由，也可在相对应的页面中配置标题颜色，背景色，是否启用下拉刷新等等"></a>配置页面路由，也可在相对应的页面中配置标题颜色，背景色，是否启用下拉刷新等等</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&quot;pages&quot;: [</span><br><span class="line">		&#123;</span><br><span class="line">			&quot;path&quot;: &quot;pages/index/index&quot;,</span><br><span class="line">			&quot;style&quot;: &#123;</span><br><span class="line">				&quot;navigationBarTitleText&quot;: &quot;uni-ui基础项目&quot;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;,</span><br><span class="line">		&#123;</span><br><span class="line">			&quot;path&quot;: &quot;pages/about/about&quot;,</span><br><span class="line">			&quot;style&quot;: &#123;</span><br><span class="line">				&quot;navigationBarTitleText&quot;:&quot;关于&quot;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	],</span><br></pre></td></tr></table></figure>
+<p>启动模式配置，仅开发期间生效，用于模拟直达页面的场景，如：小程序转发后，用户点击所打开的页面。 在 App 里真机运行可直接打开配置的页面，微信开发者工具里需要手动改变编译模式<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&quot;condition&quot;: &#123; //模式配置，仅开发期间生效</span><br><span class="line">    &quot;current&quot;: 0, //当前激活的模式（list 的索引项）</span><br><span class="line">    &quot;list&quot;: [&#123;</span><br><span class="line">            &quot;name&quot;: &quot;swiper&quot;, //模式名称</span><br><span class="line">            &quot;path&quot;: &quot;pages/component/swiper/swiper&quot;, //启动页面，必选</span><br><span class="line">            &quot;query&quot;: &quot;interval=4000&amp;autoplay=false&quot; //启动参数，在页面的onLoad函数里面得到。</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            &quot;name&quot;: &quot;test&quot;,</span><br><span class="line">            &quot;path&quot;: &quot;pages/component/switch/switch&quot;</span><br><span class="line">        &#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="样式与布局"><a href="#样式与布局" class="headerlink" title="样式与布局"></a>样式与布局</h2><p>1.uni-app目前仅支持px和%,做适配时宽度使用%，高度使用px即可;<br>2.页面元素宽度在uniapp中的换算计算公式： 750px <em> 元素在设计稿中的宽度 / 设计稿基准宽度。eg: 设计好宽度为640px， 元素A在设计稿上的宽度为100px,那么元素A在uniapp里面的宽度应为：750 </em> 100 / 640。<br>3.样式导入：使用@import导入,用;表示语句结束。eg: @import ‘../../<em>**</em>.css’。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/06/15/uniapp/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </p></div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://withc580231.github.io/2020/03/31/vue2Resource/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1448,135 +1577,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://withc580231.github.io/2019/05/09/CSS_selectors/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Huang Cheng">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="HC-FWI的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/05/09/CSS_selectors/" itemprop="url">CSS——选择器</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-09T21:17:43+08:00">
-                2019-05-09
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="选择器的作用"><a href="#选择器的作用" class="headerlink" title="选择器的作用"></a>选择器的作用</h2><p>规范了页面中哪些元素能够使用定义好的样式，为了匹配元素，可以把选择器看成匹配规则，符合规则的标签就能够应用样式。</p>
-<h2 id="基本选择器"><a href="#基本选择器" class="headerlink" title="基本选择器"></a>基本选择器</h2><h3 id="1-通用选择器"><a href="#1-通用选择器" class="headerlink" title="1.通用选择器(*)"></a>1.通用选择器(*)</h3><p>可以与页面重任何标签都匹配<br>注意，匹配所有标签，效率极低,尽量少用。<br>唯一一种项目中有可能使用*{margin:0;padding:0;}</p>
-<h3 id="2-元素选择器-标签名"><a href="#2-元素选择器-标签名" class="headerlink" title="2.元素选择器(标签名)"></a>2.元素选择器(标签名)</h3><p>设置页面中某些元素的默认样式<br>eg:div{} p{}  span{}  header{}   a{}  body{}…</p>
-<h3 id="3-类选择器"><a href="#3-类选择器" class="headerlink" title="3.类选择器(.)"></a>3.类选择器(.)</h3><p>定义页面上某个或者某类元素的样式(公共的样式，谁想用谁就可以使用)<br>特点：通过元素的class属性来引用<br>语法：<br>   1.声明，必须以.开头。点是不能省略<br>   2.引用使用的时候，直接写在class中，没有点.点<br>   3.类名不能以数字开头<br>   4.不能包含特殊字符(除了  -  , _   )<br>特殊用法1：多类选择器,让元素同时引用多个类,<any class="类名1 类名2  类名3">空格隔开<br>特殊用法2:分类选择器，标签选择器和类选择的联合使用<br>标签名.类名{}<br>(1)指向更精确<br>(2)样式优先级变高<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/05/09/CSS_selectors/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </any></p></div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1629,7 +1629,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">35</span>
+                  <span class="site-state-item-count">36</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

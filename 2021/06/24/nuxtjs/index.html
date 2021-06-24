@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="关于new的介绍new运算符创建一个用户定义的对象类型的实例或具有构造函数的内置对象的实例举个栗子：123456789function Car(color)&amp;#123;    this.color = color;&amp;#125;Car.prototype.start = function()&amp;#123;    console.log(this.color + &amp;quot;car start&amp;quot">
+<meta name="description" content="什么是 Nuxt.jsNuxt.js 是一个基于 Vue.js 的通用应用框架，一个用于 Vue.js 开发 SSR 应用的一站式解决方案。它的优点是将原来几个配置文件要完成的内容，都整合在了一个 nuxt.config.js，封装与扩展性完美的契合。Nuxtjs 弥补了 Vue 的一个缺点：搜索引擎无法抓取网站内容，不利于 SEO。 什么是 SSRSSR 又叫做服务器端渲染，前端发出请求后，后端">
 <meta name="keywords" content="Fighting">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JavaScript中new都做了哪些事儿">
-<meta property="og:url" content="https://withc580231.github.io/2019/03/10/new/index.html">
+<meta property="og:title" content="Nuxt.js 学习篇">
+<meta property="og:url" content="https://withc580231.github.io/2021/06/24/nuxtjs/index.html">
 <meta property="og:site_name" content="HC-FWI的博客">
-<meta property="og:description" content="关于new的介绍new运算符创建一个用户定义的对象类型的实例或具有构造函数的内置对象的实例举个栗子：123456789function Car(color)&amp;#123;    this.color = color;&amp;#125;Car.prototype.start = function()&amp;#123;    console.log(this.color + &amp;quot;car start&amp;quot">
+<meta property="og:description" content="什么是 Nuxt.jsNuxt.js 是一个基于 Vue.js 的通用应用框架，一个用于 Vue.js 开发 SSR 应用的一站式解决方案。它的优点是将原来几个配置文件要完成的内容，都整合在了一个 nuxt.config.js，封装与扩展性完美的契合。Nuxtjs 弥补了 Vue 的一个缺点：搜索引擎无法抓取网站内容，不利于 SEO。 什么是 SSRSSR 又叫做服务器端渲染，前端发出请求后，后端">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-10T03:34:58.376Z">
+<meta property="og:updated_time" content="2021-06-24T11:01:27.772Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JavaScript中new都做了哪些事儿">
-<meta name="twitter:description" content="关于new的介绍new运算符创建一个用户定义的对象类型的实例或具有构造函数的内置对象的实例举个栗子：123456789function Car(color)&amp;#123;    this.color = color;&amp;#125;Car.prototype.start = function()&amp;#123;    console.log(this.color + &amp;quot;car start&amp;quot">
+<meta name="twitter:title" content="Nuxt.js 学习篇">
+<meta name="twitter:description" content="什么是 Nuxt.jsNuxt.js 是一个基于 Vue.js 的通用应用框架，一个用于 Vue.js 开发 SSR 应用的一站式解决方案。它的优点是将原来几个配置文件要完成的内容，都整合在了一个 nuxt.config.js，封装与扩展性完美的契合。Nuxtjs 弥补了 Vue 的一个缺点：搜索引擎无法抓取网站内容，不利于 SEO。 什么是 SSRSSR 又叫做服务器端渲染，前端发出请求后，后端">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="https://withc580231.github.io/2019/03/10/new/">
+  <link rel="canonical" href="https://withc580231.github.io/2021/06/24/nuxtjs/">
 
 
 
 
 
-  <title>JavaScript中new都做了哪些事儿 | HC-FWI的博客</title>
+  <title>Nuxt.js 学习篇 | HC-FWI的博客</title>
   
 
 
@@ -295,7 +295,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://withc580231.github.io/2019/03/10/new/">
+    <link itemprop="mainEntityOfPage" href="https://withc580231.github.io/2021/06/24/nuxtjs/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Huang Cheng">
@@ -312,7 +312,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">JavaScript中new都做了哪些事儿</h1>
+          <h1 class="post-title" itemprop="name headline">Nuxt.js 学习篇</h1>
         
 
         <div class="post-meta">
@@ -324,8 +324,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-10T11:21:49+08:00">
-                2019-03-10
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-06-24T19:00:25+08:00">
+                2021-06-24
               </time>
             
 
@@ -372,10 +372,36 @@
       
 
       
-        <h2 id="关于new的介绍"><a href="#关于new的介绍" class="headerlink" title="关于new的介绍"></a>关于new的介绍</h2><p>new运算符创建一个用户定义的对象类型的实例或具有构造函数的内置对象的实例<br>举个栗子：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">function Car(color)&#123;</span><br><span class="line">    this.color = color;</span><br><span class="line">&#125;</span><br><span class="line">Car.prototype.start = function()&#123;</span><br><span class="line">    console.log(this.color + &quot;car start&quot;);</span><br><span class="line">&#125;</span><br><span class="line">var car = new Car(&quot;black&quot;);</span><br><span class="line">car.color;//访问构造函数里的属性，结果为black</span><br><span class="line">car.start();//访问原型里的属性，结果为black car start</span><br></pre></td></tr></table></figure></p>
-<a id="more"></a>
-<p>可以看出new创建的实例有以下2个特征：<br>1.访问到构造函数里的属性<br>2.访问到原型里的属性</p>
-<h2 id="new具体干了什么"><a href="#new具体干了什么" class="headerlink" title="new具体干了什么"></a>new具体干了什么</h2><p>new一共经历以下4个阶段：<br>1、创建一个空对象<br><code>var obj = new Object();</code><br>2、设置原型链<br>此时便建立了obj对象的原型链<br><code>obj.__proto__ = Object.prototype;</code><br>3、让Func的this指向obj，并执行Func函数体<br><code>Object.call(obj);</code><br>4、判断Func的返回值类型<br>如果是值类型，返回obj；<br>如果是引用类型，返回这个引用类型的对象。<br><code>return typeof result === &#39;obj&#39;? result : obj;</code><br>简单来说就是：首先创建新的对象; 然后将构造函数作用域指向该对象; 其次执行构造函数里的代码; 最后返回该对象;</p>
+        <h2 id="什么是-Nuxt-js"><a href="#什么是-Nuxt-js" class="headerlink" title="什么是 Nuxt.js"></a>什么是 Nuxt.js</h2><p>Nuxt.js 是一个基于 Vue.js 的通用应用框架，一个用于 Vue.js 开发 SSR 应用的一站式解决方案。它的优点是将原来几个配置文件要完成的内容，都整合在了一个 nuxt.config.js，封装与扩展性完美的契合。<br>Nuxtjs 弥补了 Vue 的一个缺点：搜索引擎无法抓取网站内容，不利于 SEO。</p>
+<h2 id="什么是-SSR"><a href="#什么是-SSR" class="headerlink" title="什么是 SSR"></a>什么是 SSR</h2><p>SSR 又叫做服务器端渲染，前端发出请求后，后端在将 HTML 页面返回给前端之前，先把 HTML 页面中的特定区域，用数据填充好，再将完整的 HTML 返回给前端。在 SPA 场景下，服务端渲染都是针对第一次 get 请求，它会完整的 html 给浏览器，浏览器直接渲染出首屏，用不着浏览器端多一个 AJAX 请求去获取数据再渲染。</p>
+<h3 id="SSR-优缺点"><a href="#SSR-优缺点" class="headerlink" title="SSR 优缺点"></a>SSR 优缺点</h3><p>优点：<br>1：更好的 SEO，因为传统的搜索引擎只会从 HTML 中抓取数据，这会导致前端渲染的页面无法被抓取。<br>2：更快的内容到达时间(time-to-content)，特别是对于缓慢的网络情况或运行缓慢的设备 。页面首屏时间大概有 80%消耗在网络上，剩下的时间在后端读取数据以及浏览器渲染，显然要优化后面的 20%是比较困难的，优化网络时间是效果最明显的手段。传统的 Ajax 请求是先请求 js 再由 js 发起数据请求，两项时间再加上浏览器渲染时间才是首屏时间。而 SSR 能将两个请求合并为一个。<br>缺点：<br>1：服务器负载增加；<br>2：服务器端和浏览器环境差异带来的问题，例如 document 等对象找不到的问题。</p>
+<h2 id="创建-Nuxt-应用程序"><a href="#创建-Nuxt-应用程序" class="headerlink" title="创建 Nuxt 应用程序"></a>创建 Nuxt 应用程序</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">npm i create-nuxt-app -g</span><br><span class="line">create-nuxt-app my-nuxt-demo</span><br><span class="line">cd my-nuxt-demo</span><br><span class="line">npm run dev</span><br></pre></td></tr></table></figure>
+<h2 id="文件结构分析"><a href="#文件结构分析" class="headerlink" title="文件结构分析"></a>文件结构分析</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">└─my-nuxt-demo</span><br><span class="line">  ├─.nuxt               // Nuxt自动生成，临时的用于编辑的文件，build</span><br><span class="line">  ├─assets              // 用于组织未编译的静态资源如LESS、SASS或JavaScript,对于不需要通过 Webpack 处理的静态资源文件，可以放置在 static 目录中</span><br><span class="line">  ├─components          // 用于自己编写的Vue组件，比如日历组件、分页组件</span><br><span class="line">  ├─layouts             // 布局目录，用于组织应用的布局组件，不可更改</span><br><span class="line">  ├─middleware          // 用于存放中间件</span><br><span class="line">  ├─node_modules</span><br><span class="line">  ├─pages               // 用于组织应用的路由及视图,Nuxt.js根据该目录结构自动生成对应的路由配置，文件名不可更改</span><br><span class="line">  ├─plugins             // 用于组织那些需要在 根vue.js应用 实例化之前需要运行的 Javascript 插件。</span><br><span class="line">  ├─static              // 用于存放应用的静态文件，此类文件不会被 Nuxt.js 调用 Webpack 进行构建编译处理。 服务器启动的时候，该目录下的文件会映射至应用的根路径 / 下。文件夹名不可更改。⭐</span><br><span class="line">  └─store               // 用于组织应用的Vuex 状态管理。文件夹名不可更改。</span><br><span class="line">  ├─.editorconfig       // 开发工具格式配置</span><br><span class="line">  ├─.eslintrc.js        // ESLint的配置文件，用于检查代码格式</span><br><span class="line">  ├─.gitignore          // 配置git忽略文件</span><br><span class="line">  ├─nuxt.config.js      // 用于组织Nuxt.js 应用的个性化配置，以便覆盖默认配置。文件名不可更改。</span><br><span class="line">  ├─package-lock.json   // npm自动生成，用于帮助package的统一设置的，yarn也有相同的操作</span><br><span class="line">  ├─package.json        // npm 包管理配置文件</span><br><span class="line">  ├─README.md</span><br></pre></td></tr></table></figure>
+<h2 id="页面和路由"><a href="#页面和路由" class="headerlink" title="页面和路由"></a>页面和路由</h2><h3 id="基本路由"><a href="#基本路由" class="headerlink" title="基本路由"></a>基本路由</h3><p>Nuxt.js 依据 pages 目录结构自动生成 vue-rouer 模块的路由配置，例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">└─pages</span><br><span class="line">    ├─index.vue</span><br><span class="line">    └─user</span><br><span class="line">      ├─index.vue</span><br><span class="line">      ├─one.vue</span><br></pre></td></tr></table></figure>
+<p>那么 Nuxt.js 会自动生成如下路由配置：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">router: &#123;</span><br><span class="line">  routes: [</span><br><span class="line">    &#123;</span><br><span class="line">      name: &apos;index&apos;,</span><br><span class="line">      path: &apos;/&apos;,</span><br><span class="line">      component: &apos;pages/index.vue&apos;</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      name: &apos;user&apos;,</span><br><span class="line">      path: &apos;/user&apos;,</span><br><span class="line">      component: &apos;pages/user/index.vue&apos;</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      name: &apos;user-one&apos;,</span><br><span class="line">      path: &apos;/user/one&apos;,</span><br><span class="line">      component: &apos;pages/user/one.vue&apos;</span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="页面跳转"><a href="#页面跳转" class="headerlink" title="页面跳转"></a>页面跳转</h3><p>1：不要使用 a 标签，因为是重新获取一个新的页面，并不是 SPA（Single Page Application）；<br>2：使用标签跳转 <nuxt-link to="/users">users</nuxt-link>；<br>3：使用 js 跳转 this.\$router.push(‘/users’)。</p>
+<h3 id="动态路由"><a href="#动态路由" class="headerlink" title="动态路由"></a>动态路由</h3><p>1：在 Nuxt.js 里面定义带参数的动态路由，需要创建对应的以下划线作为前缀的 Vue 文件 或 目录。<br>2：获取动态参数</p>
+<h3 id="路由嵌套"><a href="#路由嵌套" class="headerlink" title="路由嵌套"></a>路由嵌套</h3><p>1：添加一个 Vue 文件，作为父组件；<br>2：添加一个与父组件同名的文件夹来存放视图组件；<br>3：在父文件中，添加组件，用于展示匹配到的子视图。</p>
+<h3 id="创建-layout"><a href="#创建-layout" class="headerlink" title="创建 layout"></a>创建 layout</h3><p>1：去 layouts 文件夹下面新建一个新的 layout 组件，例如 myLayout.vue，这样，所有和 myLayout 相关的页面都会有公共的 layout；<br>2：给需要用到的 myLayout 的组件添加到 layout 属性，并指定需要使用的 layout</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">  layout: &apos;myLayout&apos;,</span><br><span class="line">  // OR</span><br><span class="line">  layout (context) &#123;</span><br><span class="line">    return &apos;myLayout&apos;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="新建一个组件"><a href="#新建一个组件" class="headerlink" title="新建一个组件"></a>新建一个组件</h3><p>在 components 文件夹下面新建一个 Header.vue 组件。引入组件，注意路径的~符号，表示根目录。layout 中也能使用组件。</p>
+<h3 id="ElementUI-的使用"><a href="#ElementUI-的使用" class="headerlink" title="ElementUI 的使用"></a>ElementUI 的使用</h3><p>1：下载 npm install element-ui –save;<br>2：在 plugins 文件夹下面，创建 ElementUI.js 文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">import Vue from &apos;vue&apos;</span><br><span class="line">import ElementUI from &apos;element-ui&apos;</span><br><span class="line">Vue.use(ElementUI)</span><br></pre></td></tr></table></figure>
+<p>3：在 nuxt.config.js 中添加配置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">css: [</span><br><span class="line">  &apos;element-ui/lib/theme-chalk/index.css&apos;</span><br><span class="line">],</span><br><span class="line">plugins: [</span><br><span class="line">  &#123;src: &apos;~/plugins/ElementUI&apos;, ssr: true &#125;</span><br><span class="line">],</span><br><span class="line">build: &#123;</span><br><span class="line">  vendor: [&apos;element-ui&apos;]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="异步数据"><a href="#异步数据" class="headerlink" title="异步数据"></a>异步数据</h2><p>Nuxt.js 扩展了 Vue.js，增加了一个叫 asyncData 的方法，使得我们可以在设置组件的数据之前能异步获取或处理数据。asyncData 方法会在组件（限于页面组件）每次加载之前被调用。它可以在服务端或路由更新之前被调用。所以需要注意这个函数中不能使用 this。<br>注意：常规写法如果在 created 钩子中写异步，是在客户端渲染的而不是在服务端。<br>使用方法：asyncData(context, callback) {callback(null, data)}。<br>context.route.params.xxx 获取参数。<br>callback(new Error(), data)渲染出错的页面。<br>注意：这个方法在服务器端执行和在客户端执行的区别。</p>
+<h2 id="axios-的使用"><a href="#axios-的使用" class="headerlink" title="axios 的使用"></a>axios 的使用</h2><p>安装 axios：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install axios --save</span><br></pre></td></tr></table></figure>
+<p>使用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">import axios from &apos;axios&apos;</span><br><span class="line">asyncData(context, callback) &#123;</span><br><span class="line">  axios.get(&apos;http://localhost:3301/xxx&apos;)</span><br><span class="line">    .then(res =&gt; &#123;</span><br><span class="line">      console.log(res);</span><br><span class="line">      callback(null, &#123;list: res.data&#125;)</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>为防止重复打包，在 nuxt.config.js 中配置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">module.exports = &#123;</span><br><span class="line">  build: &#123;</span><br><span class="line">    vendor: [&apos;axios&apos;]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="SEO-优化"><a href="#SEO-优化" class="headerlink" title="SEO 优化"></a>SEO 优化</h2><p>在 nuxt.config.js 配置文件中修改</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">head: &#123;</span><br><span class="line">	title: pkg.name,</span><br><span class="line">	meta: [</span><br><span class="line">		&#123; charset: &apos;utf-8&apos; &#125;,</span><br><span class="line">		&#123; name: &apos;viewport&apos;, content: &apos;width=device-width, initial-scale=1&apos; &#125;,</span><br><span class="line">		&#123; hid: &apos;description&apos;, name: &apos;description&apos;, content: pkg.description &#125;</span><br><span class="line">	],</span><br><span class="line">  link: [</span><br><span class="line">    &#123; rel: &apos;icon&apos;, type: &apos;image/x-icon&apos;, href: &apos;/favicon.ico&apos; &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+<p>页面文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">head()&#123;</span><br><span class="line">  return&#123;</span><br><span class="line">    title:&apos;豆瓣电影&apos;,</span><br><span class="line">    meta:[&#123;</span><br><span class="line">    &apos;name&apos;:&apos;keywords&apos;,</span><br><span class="line">    &apos;content&apos;: &apos;电影、经典电影、热映、电视剧、美剧、影评、电影院、电影票、排行、推荐&apos;</span><br><span class="line">    &#125;]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -400,8 +426,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/03/08/Protocol/" rel="next" title="浏览器访问服务器的过程中丢包了，但返回的status为200。原因是什么">
-                <i class="fa fa-chevron-left"></i> 浏览器访问服务器的过程中丢包了，但返回的status为200。原因是什么
+              <a href="/2021/04/24/number_five/" rel="next" title="算法-每日一题">
+                <i class="fa fa-chevron-left"></i> 算法-每日一题
               </a>
             
           </div>
@@ -409,10 +435,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/03/16/JS/" rel="prev" title="JavaScript基础知识">
-                JavaScript基础知识 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -533,7 +555,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#关于new的介绍"><span class="nav-number">1.</span> <span class="nav-text">关于new的介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#new具体干了什么"><span class="nav-number">2.</span> <span class="nav-text">new具体干了什么</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是-Nuxt-js"><span class="nav-number">1.</span> <span class="nav-text">什么是 Nuxt.js</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是-SSR"><span class="nav-number">2.</span> <span class="nav-text">什么是 SSR</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#SSR-优缺点"><span class="nav-number">2.1.</span> <span class="nav-text">SSR 优缺点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建-Nuxt-应用程序"><span class="nav-number">3.</span> <span class="nav-text">创建 Nuxt 应用程序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文件结构分析"><span class="nav-number">4.</span> <span class="nav-text">文件结构分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#页面和路由"><span class="nav-number">5.</span> <span class="nav-text">页面和路由</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本路由"><span class="nav-number">5.1.</span> <span class="nav-text">基本路由</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#页面跳转"><span class="nav-number">5.2.</span> <span class="nav-text">页面跳转</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#动态路由"><span class="nav-number">5.3.</span> <span class="nav-text">动态路由</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#路由嵌套"><span class="nav-number">5.4.</span> <span class="nav-text">路由嵌套</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建-layout"><span class="nav-number">5.5.</span> <span class="nav-text">创建 layout</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#新建一个组件"><span class="nav-number">5.6.</span> <span class="nav-text">新建一个组件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ElementUI-的使用"><span class="nav-number">5.7.</span> <span class="nav-text">ElementUI 的使用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#异步数据"><span class="nav-number">6.</span> <span class="nav-text">异步数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#axios-的使用"><span class="nav-number">7.</span> <span class="nav-text">axios 的使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SEO-优化"><span class="nav-number">8.</span> <span class="nav-text">SEO 优化</span></a></li></ol></div>
             
 
           </div>
